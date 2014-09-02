@@ -1,29 +1,39 @@
 (function (angular) {
   var
-    definition;
+  definition;
 
   definition = [
-    '$stateProvider',
-    '$urlRouterProvider',
-    statesConfig
+  '$stateProvider',
+  '$urlRouterProvider',
+  statesConfig
   ];
 
   angular.module('ni.States')
-    .config(definition);
+  .config(definition);
 
   function statesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider
-      .otherwise('/');
+    .otherwise('/');
 
     $stateProvider
-      .state('example',  {
-        url: '/',
-        templateUrl: 'example.html'
+    .state('example',  {
+      url: '/',
+      views: {
+        '': { 
+          templateUrl: 'example.html'
+        },
+        'header': {
+          templateUrl: 'header.html'
+        },
+        'footer': {
+          templateUrl: 'footer.html'
+        }
+      }
     });
-      
+
 
     
-}
+  }
 
 
 })(angular);
