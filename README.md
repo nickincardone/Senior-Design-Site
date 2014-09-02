@@ -5,7 +5,6 @@
 ### Setup
 
 Clone repo and run:
-`npm install`
-`grunt`
+`npm install && grunt`
 
 and open `index.html`
