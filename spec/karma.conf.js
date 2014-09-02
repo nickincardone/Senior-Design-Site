@@ -15,7 +15,6 @@ module.exports = function(config) {
 
         '../assets/components/angular-mocks/angular-mocks.js',
 
-        '../dist/chValidator.js',
 
         './**/*.spec.js'
     ],
@@ -27,7 +26,6 @@ module.exports = function(config) {
     port: 8081,
 
     preprocessors: {
-      '../dist/chValidator.js': ['coverage']
     },
 
     // test results reporter to use
