@@ -5,6 +5,6 @@
 ### Setup
 
 Clone repo and run:
-`npm install && grunt`
+`npm install && bower install`
 
-and open `index.html`
+Now run `grunt` and open `index.html`

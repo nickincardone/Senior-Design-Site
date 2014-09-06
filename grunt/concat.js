@@ -14,6 +14,6 @@ module.exports = {
       '<%= jsPath %>/main_module.js',
       '<%= jsPath %>/**/*.js'
     ],
-    dest: '<%= distPath %>/app.js'
+    dest: '<%= distPath %>/<%= appName %>.js'
   }
 };

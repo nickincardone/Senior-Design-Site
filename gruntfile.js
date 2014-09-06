@@ -10,6 +10,9 @@ function gruntConfig(grunt) {
     htmlPath: 'assets/templates',
     distPath: 'dist',
 
+    //name that app saves to (ex. (name).js) no spaces
+    appName: 'AngleSass',
+    
     concat: require('./grunt/concat'),
     watch: require('./grunt/watch'),
     uglify: require('./grunt/uglify'),
