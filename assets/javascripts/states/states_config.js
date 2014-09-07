@@ -20,7 +20,7 @@
       url: '/',
       views: {
         '': { 
-          templateUrl: 'example.html'
+          templateUrl: 'home.html'
         },
         'header': {
           templateUrl: 'header.html'
