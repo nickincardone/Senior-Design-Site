@@ -4,3 +4,4 @@ node_modules/
 dist/*
 spec/reports/
 assets/components
+assets/javascripts/templates_module.js
