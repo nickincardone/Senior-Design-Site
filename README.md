@@ -1,5 +1,4 @@
 # Senior Design 
-View at [nickincardone.com/senior](http://nickincardone.com/senior)
 
 ## Website for our Senior Design project
 
