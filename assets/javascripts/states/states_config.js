@@ -48,6 +48,17 @@
       .state('text.tutorial0', {
         url: '/tutorials/0',
         templateUrl: '0.html'
+      })
+      .state('about', {
+        url: '/about',
+        views: {
+          '': {
+            templateUrl: 'about.html'
+          },
+          'header': {
+            templateUrl: 'header.html'
+          }
+        }
       });
   }
 })(angular);
