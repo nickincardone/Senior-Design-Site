@@ -13,20 +13,18 @@
 
   function statesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider
-    .otherwise('/');
+    .otherwise('/video');
 
     $stateProvider
-    .state('example',  {
-      url: '/',
+    .state('video',  {
+      url: '/video',
       views: {
         '': { 
-          templateUrl: 'home.html'
+          templateUrl: 'video.html',
+          controller: 'videoController'
         },
         'header': {
           templateUrl: 'header.html'
-        },
-        'footer': {
-          templateUrl: 'footer.html'
         }
       }
     });

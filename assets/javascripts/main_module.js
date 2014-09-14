@@ -6,8 +6,7 @@
   dependencies = [
     'ni.States',
     'ni.Templates',
-    
-    'ni.Validator'
+    'ni.Video'
   ];
 
   angular.module('ni.Main', dependencies);

@@ -23,10 +23,10 @@
     <center>
     <div class="video-panel col-md-9 col-xs-12">
 
-        <div class="video-title"><h3>Lesson Title</h3></div>
-      <iframe width="420" height="315" src="//www.youtube.com/embed/a1Y73sPHKxw" frameborder="0" allowfullscreen></iframe>
-      <div class="video-subtitle"><h4>Second Description</h4></div>
-      <div class="video-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+        <div class="video-title"><h3>{{videos[0].title}}</h3></div>
+      <iframe width="420" height="315" ng-src="{{videoUrl()}}" frameborder="0" allowfullscreen></iframe>
+      <div class="video-subtitle"><h4>{{videos[0].subheading}}</h4></div>
+      <div class="video-description">{{videos[0].description}} </div>
 
     <div class="bottom-nav">
 

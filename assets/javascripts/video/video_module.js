@@ -4,9 +4,9 @@
     dependencies;
 
   dependencies = [
-    
-  ]; 
 
-  angular.module('ni.Validator', dependencies);
+  ];
+
+  angular.module('ni.Video', dependencies);
 
 })(angular);
