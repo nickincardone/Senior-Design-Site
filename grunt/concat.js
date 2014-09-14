@@ -8,6 +8,8 @@ module.exports = {
     src: [
       '<%= jsPath %>/video/video_module.js',
       '<%= jsPath %>/video/*.js',
+      '<%= jsPath %>/text/text_module.js',
+      '<%= jsPath %>/text/*.js',
       '<%= jsPath %>/states/states_module.js',
       '<%= jsPath %>/states/*.js',
       '<%= jsPath %>/templates_module.js',

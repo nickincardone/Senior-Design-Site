@@ -6,9 +6,10 @@
   dependencies = [
     'ni.States',
     'ni.Templates',
-    'ni.Video'
+    'ni.Video',
+    'ni.Text'
   ];
 
-  angular.module('ni.Main', dependencies);
+  angular.module('ni.SeniorDesign', dependencies);
 
 })(angular);

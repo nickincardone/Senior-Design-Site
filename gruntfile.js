@@ -11,7 +11,7 @@ function gruntConfig(grunt) {
     distPath: 'dist',
 
     //name that app saves to (ex. (name).js) no spaces
-    appName: 'AngleSass',
+    appName: 'Senior',
     
     concat: require('./grunt/concat'),
     watch: require('./grunt/watch'),

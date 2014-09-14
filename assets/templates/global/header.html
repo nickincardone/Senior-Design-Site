@@ -1,44 +1,19 @@
-<div class="navbar hidden-xs navbar-default navbar-fixed-top" role="navigation">
-    <div class="container" style="background-color: #f8f8f8">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Java FX Tutorial</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <!--<li><a href="#">Home</a></li>-->
-                <li class="active"><a ui-sref="resume">Home</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Lessons<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a ui-sref="#">Lesson 1</a></li>
-                        <li><a ui-sref="#">Lesson 2</a></li>
-                        <li><a href="#">Lesson 3</a></li>
-                    </ul>
-                </li>
-                <!--<li><a href="#contact">Contact</a></li>-->
-            </ul>
-
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</div>
-
-
-<div class="navbar visible-xs navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header pull-left">
-            <a class="navbar-brand" href="#">Java FX Tutorial</a>
-        </div>
-        <div class="navbar-header pull-right">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Menu</b> <b class="caret"></b></a>
-                    <ul class="dropdown-menu"> 
-                        <li class="active"><a href="#">Lesson 1</a></li>                
-                        <li><a href="#">Lesson 2</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" ui-sref="video">JavaFX Tutorial</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a ui-sref="video">Video</a></li>
+				<li><a ui-sref="text/tutorials">Text</a></li>
+			</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>

@@ -1,37 +1,53 @@
-(function (angular) {
+(function(angular) {
   var
-  definition;
+    definition;
 
   definition = [
-  '$stateProvider',
-  '$urlRouterProvider',
-  statesConfig
+    '$stateProvider',
+    '$urlRouterProvider',
+    statesConfig
   ];
 
   angular.module('ni.States')
-  .config(definition);
+    .config(definition);
 
   function statesConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider
-    .otherwise('/video');
+      .otherwise('/video');
 
     $stateProvider
-    .state('video',  {
-      url: '/video',
-      views: {
-        '': { 
-          templateUrl: 'video.html',
-          controller: 'videoController'
-        },
-        'header': {
-          templateUrl: 'header.html'
+      .state('video', {
+        url: '/video',
+        views: {
+          '': {
+            templateUrl: 'video.html',
+            controller: 'videoController'
+          },
+          'header': {
+            templateUrl: 'header.html'
+          }
         }
-      }
-    });
-
-
-    
+      })
+      .state('text', {
+        url: '/text',
+        abstract: true,
+        views: {
+          '': {
+            templateUrl: 'text.html',
+            controller: 'textController'
+          },
+          'header': {
+            templateUrl: 'header.html'
+          }
+        }
+      })
+      .state('text.tutorials', {
+        url: '/tutorials',
+        templateUrl: 'tutorials.html'
+      })
+      .state('text.tutorial0', {
+        url: '/tutorials/0',
+        templateUrl: '0.html'
+      });
   }
-
-
 })(angular);
