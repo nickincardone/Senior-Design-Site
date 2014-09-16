@@ -2,7 +2,7 @@
   <div class="row">
     <div class="lessons-nav col-md-3 col-xs-12">
       <div ng-repeat="video in videos">
-      <div ng-click="currentVideo = $index" class="btn">
+      <div ng-class="{active: (currentVideo == $index)}" ng-click="setCurrentVideo($index)" class="btn">
         {{video.title}}
       </div>
       </div>

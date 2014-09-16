@@ -14,7 +14,7 @@
 
   function videoController($scope, $sce) {
     $scope.currentVideo = 0;
-    
+
     $scope.videos = [
       {
         'title': 'JavaFX Tutorial 1',
@@ -50,6 +50,10 @@
 
     $scope.videoUrl = function (vidUrl) {
       return $sce.trustAsResourceUrl(vidUrl);
+    };
+
+    $scope.setCurrentVideo = function (index) {
+      $scope.currentVideo = index;
     };
 
   }
