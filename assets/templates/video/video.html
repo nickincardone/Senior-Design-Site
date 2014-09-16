@@ -14,11 +14,11 @@
       <div class="video-subtitle"><h4>{{videos[currentVideo].subheading}}</h4></div>
       <div class="video-description">{{videos[currentVideo].description}} </div>
       <div class="bottom-nav">
-        <div class="pull-left btn">Previous</div>
+        <div ng-disabled="currentVideo == 0" ng-click="previousVideo()" class="pull-left btn">Previous</div>
         
-        <div class="btn">View Lesson's Text</div>
+        <a ui-sref="text.tutorials" class="btn">View Lesson's Text</a>
         
-        <div class="pull-right btn">Next</div>
+        <div ng-disabled="currentVideo == videos.length - 1" ng-click="nextVideo()" class="pull-right btn">Next</div>
       </div>
     </div>
     </center>

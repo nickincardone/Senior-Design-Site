@@ -56,6 +56,14 @@
       $scope.currentVideo = index;
     };
 
+    $scope.nextVideo = function () {
+      $scope.currentVideo++;
+    };
+
+    $scope.previousVideo = function () {
+      $scope.currentVideo--;
+    };
+
   }
 
 })(angular);
