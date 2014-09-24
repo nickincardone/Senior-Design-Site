@@ -1,58 +1,61 @@
-<h1><img alt="Saturn V carrying Apollo 11" class="right" src="http://c.cksource.com/a/1/img/sample.jpg" /> Apollo 11</h1>
+<body style="background-color: #CCFFBB; align-content:center;">
+    <h1 style="text-align: center;">Java FX Hello World Tutorial</h1>
+    
+    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
+        <h2 style="background-color: #CCCCCC;"> What is Java FX? </h2>
+        <ul style="font-size: 1.5em;">
+            <li>Java FX is a software platform for creating and developing rich internet applications that can run across a wide variety of devices.</li>
+            <li>Java FX is popularly known as an enhanced version of Swing.</li>
+        </ul>
+    </div>
 
-<p><strong>Apollo 11</strong> was the spaceflight that landed the first humans, Americans <a href="http://en.wikipedia.org/wiki/Neil_Armstrong">Neil Armstrong</a> and <a href="http://en.wikipedia.org/wiki/Buzz_Aldrin">Buzz Aldrin</a>, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p>
+    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
+        <h2 style="background-color: #CCCCCC;">Model-View-Controller (MVC)</h2>
+        <ul style="font-size: 1.5em;">
+            <li>Java FX incorporates the MVC design pattern.</li>
+            <li>For a high level overview of the MVC pattern, look at the figure below:</li></ul>
+        <center><img style="background-color: white;" src="https://lh5.googleusercontent.com/3ugbbJPsAkq7z1yYlOo10NKfD-c_g9X9usf4SiIJAC-x5pFOgJTwgSvlLvj-V-Px4rlbM-7EfhzIpBMkpLQ-p9z9VrCWD4cgjkVJmyWqcKzk6COiYESak8hGS3bxhRTH3A" width=200 height=220 /></center>
+    </div>
 
-<p>Armstrong spent about <s>three and a half</s> two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&nbsp;kg) of lunar material for return to Earth. A third member of the mission, <a href="http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)">Michael Collins</a>, piloted the <a href="http://en.wikipedia.org/wiki/Apollo_Command/Service_Module">command</a> spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth.</p>
+    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
+        <h2 style="background-color: #CCCCCC;">Software Installation</h2>
+        <ul style="font-size: 1.5em;">
+            <li>Downloaded and install NetBeans via <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">this link</a>.</li>
+            <li>Next, download and intall SceneBuilder via <a href="http://www.oracle.com/technetwork/java/javase/downloads/sb2download-2177776.html">this link</a>.</li>
+                <ul style="padding-left: 15px;"><li>Note: Choose to install SceneBuilder in the default location for use during this tutorial.</li></ul>
+            <li>Then, in NetBeans, go to <i>File</i> -&gt; <i>New Project</i> -&gt; <i>Java FX</i> -&gt; <i>Java FXML Application</i> -&gt; Name the project as <b>OurFirstProject</b>.</li>
+            <li>After doing this, you should see three files pop up in the navigator on the left hand side of the screen.</li>
+            <li>In the file OurFirstProject.java, you will see the start() method. this is the entry point for Java FX applications</li>
+        </ul>
+        <p style="font-size: 1.5em;">We will now learn how to use these files to make a simple UI which allows a user to click a button and generate the text ‘Hello World!’.</p>
+    </div>
 
-<h2>Broadcasting and <em>quotes</em> <a id="quotes" name="quotes"></a></h2>
-
-<p>Broadcast on live TV to a world-wide audience, Armstrong stepped onto the lunar surface and described the event as:</p>
-
-<blockquote>
-<p>One small step for [a] man, one giant leap for mankind.</p>
-</blockquote>
-
-<p>Apollo 11 effectively ended the <a href="http://en.wikipedia.org/wiki/Space_Race">Space Race</a> and fulfilled a national goal proposed in 1961 by the late U.S. President <a href="http://en.wikipedia.org/wiki/John_F._Kennedy">John F. Kennedy</a> in a speech before the United States Congress:</p>
-
-<blockquote>
-<p>[...] before this decade is out, of landing a man on the Moon and returning him safely to the Earth.</p>
-</blockquote>
-
-<h2>Technical details <a id="tech-details" name="tech-details"></a></h2>
-
-<table align="right" border="1" bordercolor="#ccc" cellpadding="5" cellspacing="0" style="border-collapse:collapse">
-	<caption><strong>Mission crew</strong></caption>
-	<thead>
-		<tr>
-			<th scope="col">Position</th>
-			<th scope="col">Astronaut</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Commander</td>
-			<td>Neil A. Armstrong</td>
-		</tr>
-		<tr>
-			<td>Command Module Pilot</td>
-			<td>Michael Collins</td>
-		</tr>
-		<tr>
-			<td>Lunar Module Pilot</td>
-			<td>Edwin &quot;Buzz&quot; E. Aldrin, Jr.</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>Launched by a <strong>Saturn V</strong> rocket from <a href="http://en.wikipedia.org/wiki/Kennedy_Space_Center">Kennedy Space Center</a> in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of <a href="http://en.wikipedia.org/wiki/NASA">NASA</a>&#39;s Apollo program. The Apollo spacecraft had three parts:</p>
-
-<ol>
-	<li><strong>Command Module</strong> with a cabin for the three astronauts which was the only part which landed back on Earth</li>
-	<li><strong>Service Module</strong> which supported the Command Module with propulsion, electrical power, oxygen and water</li>
-	<li><strong>Lunar Module</strong> for landing on the Moon.</li>
-</ol>
-
-<p>After being sent to the Moon by the Saturn V&#39;s upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the <a href="http://en.wikipedia.org/wiki/Mare_Tranquillitatis">Sea of Tranquility</a>. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the <a href="http://en.wikipedia.org/wiki/Pacific_Ocean">Pacific Ocean</a> on July 24.</p>
-
-<hr />
-<p><small>Source: <a href="http://en.wikipedia.org/wiki/Apollo_11">Wikipedia.org</a></small></p>
+    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
+        <h2 style="background-color: #CCCCCC;">Developing the Hello World UI</h2>
+        <ul style="font-size: 1.5em;">
+            <li>Right click on the file <b>FXMLDocument.fxml</b> and click <i>Open</i>.</li>
+            <li>A dialog box will pop up, which contains a user interface to allow the user to create any kind of layout they want.</li>
+            <ul style="padding-left: 15px;"><li>Note: This UI is provided by SceneBuilder, which we installed earlier.</li></ul>
+            <li>By default, the layout contains a button labelled <i>Click Me!</i>.</li>
+            <li>On the left, you can see AnchorPane, which is the root of the UI. </li> 
+            <li>The AnchorPane contains the Button we see displayed.</li>
+        </ul>
+        <center><img src="https://lh3.googleusercontent.com/2lEfTtawJnucmIQXgwgTGWBiqiFjB_9q_XmDiMCw_zKUYx6HwTm8qr5Z3cTB4HtHb2Zen29FzTqaS4U0DM8Mct-_qO1_BwwktuTcjEUXIPscrSsHBRBNzg8Dhn1qqZa4TQ" width=624 height=369 /></center>
+        <p style="font-size: 1.5em;">
+            Our task now is to somehow control what happens when we click on the button! </p> 
+        <ul style="font-size: 1.5em;">
+            <li>The first step in doing this is to create a known ID for the button.</li>
+            <li>On the right hand side of the SceneBuilder window, collapse the Properties tab and click on the Code tab.</li>
+            <li>Change the field corresponding to fx:id to <i>helloButton</i></li>
+            <li>You will also see that the <i>On Action</i> field is defaulted to <i>handleButtonAction()</i>.</li>
+            <li>To understand this, go to the class FXMLController, where you can see the method handleButtonAction().</li>
+            <li>This method performs the actions you need to be performed when the button is clicked.</li>
+            <li>When creating labels, buttons or handler methods, don’t forget to include the @FXML tag above the statements or methods doing this.</li>
+            <li>The <i>handleButtonAction()</i> does two things: it prints something to the console, and it sets the text of a pre-created label to <i>Hello World!</i>.</li>
+            <li>This is what causes <i>Hello World!</i> to be displayed on the screen.</li>
+            <li>We now hit run, which is the green play button below the menu bar.</li>
+        </ul>
+        <p style="font-size: 1.5em;">You can now see the output, as shown below:</p>
+        <center><img src="https://lh5.googleusercontent.com/V7uDd-EmosSPu0-fX_qPJQYqEWs7UdO7y_I2yLoreRlkR1M22EU4QuOwvobtpxAHDqWpJlHyjO51Wg7M8_0sj1kgI7qgGeFvhLtKjRkgKBrDNxAkzc62QO66VNrHkaRZuw" width=336 height=236 /></center>
+    </div>
+</body>
