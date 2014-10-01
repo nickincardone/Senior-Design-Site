@@ -1,0 +1,144 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+body {
+  background-color: #303030;
+  font-family: "Open Sans", Arial, Tahoma;
+  font-weight: 400;
+  font-size: 1em;
+  color: #363636;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 920px;
+  }
+}
+.content-container .row {
+  margin-left: 0px;
+}
+
+.jumbotron {
+  text-align: center;
+}
+.jumbotron a {
+  font-size: 2em;
+  background-color: #fff;
+  border: 2px #e7e7e7 solid;
+}
+
+#example {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #888888;
+}
+#example .row {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 71px;
+}
+
+.lessons-nav {
+  height: 100%;
+  border-right: 1px black solid;
+  padding: 0px;
+}
+.lessons-nav .btn {
+  width: 100%;
+  margin: auto;
+  font-family: 'open-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background-color: #fcfcfc;
+  text-indent: 0;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 0px solid #dcdcdc;
+  display: inline-block;
+  color: #777777;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #ffffff;
+  padding: 12px;
+}
+.lessons-nav .btn:hover {
+  background-color: #dfdfdf;
+}
+.lessons-nav .btn.active {
+  background-color: #dfdfdf;
+}
+.lessons-nav .bottom-left-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.video-panel {
+  position: relative;
+  height: 550px;
+}
+.video-panel .bottom-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-right: 30px;
+}
+.video-panel .bottom-nav .btn {
+  font-family: 'open-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background-color: #fcfcfc;
+  text-indent: 0;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 0px solid #dcdcdc;
+  display: inline-block;
+  color: #777777;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #ffffff;
+  padding: 12px;
+  border: 1px #3c3c3c solid;
+}
+
+@media (min-width: 768px) {
+  .video-container {
+    max-height: 550px;
+  }
+}
+.tutorials {
+  text-align: center;
+  list-style-type: none;
+  padding-left: 0px;
+}
+.tutorials a {
+  font-size: 2em;
+}
+
+.collaborators {
+  text-align: center;
+}
+.collaborators ul {
+  font-size: 2em;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+/*# sourceMappingURL=styles.css.map */
