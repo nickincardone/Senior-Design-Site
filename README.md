@@ -25,13 +25,17 @@ Ensure node is installed
 
 run `npm install -g grunt-cli` 
 
-### Bower
+### Sass
 
-run `npm install -g bower`
+You need to have sass installed to compile the css file
+
+if you have ruby you can install sass with `sudo gem install sass` 
+
+if not and you do not want to install ruby look [here](http://sass-lang.com/libsass)
 
 ## Setup
 
 Clone repo and run:
-`npm install && bower install`
+`sudo npm install`
 
 Now run `grunt` and open `index.html`
