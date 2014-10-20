@@ -1,0 +1,211 @@
+﻿<body style="background-color: #CCFFBB; align-content:center;">
+    <h1 style="text-align: center;">Creating A User Login</h1>
+
+    <div class="divStyle">
+        <h2 class="header"> Installing The Database (SQlite) </h2>
+        <p>
+            In this tutorial, we will be learning how to create a login. In order to do this, we are going to
+            establish a database connection. The database we will be using is SQLite, since it is very
+            lightweight and works very well with Java.
+        </p>
+        <ul>
+            <li>First, go to this link and download the latest JAR file. TODO: Add the link for the JAR file</li>
+            <li>
+                The next step is to install SQLite by downloading the file from here in order to obtain the
+                SQLite DB browser, which will allow you to install SQLite. TODO: Add the file from here link
+            </li>
+        </ul>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Creating A Project</h2>
+        <ul>
+            <li>The next step is to open NetBeans, this is where you will create a new project called <b>ToDoApp</b>.</li>
+            <ul class="note"><li>Note that you will choose JavaFX FXML Application from the list of project types.</li></ul>
+            <li>Next you will add the JARs to your project by right clicking on Libraries and selecting Add JAR.</li>
+            <li>Then navigate to the location of the JAR file you downloaded earlier and select it.</li>
+        </ul>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Setting Up The Database</h2>
+        <p>Now let’s setup our database so that we can use it easily</p>
+        <ul>
+            <li>First, navigate to the project folder of <b>ToDoApp</b> in the command line.</li>
+            <li>Then type in <i>sqlite3</i> and press enter.</li>
+            <li>You will now see a ‘sqlite>’ pop up in the next line, allowing user input.</li>
+        </ul>
+        <p>This will be the command-line interface through which we will type in SQLite-related commands.</p>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Creating The Database</h2>
+        <ul>
+            <li>Now, type in <i>.open first.db</i> to create a new DB. </li>
+            <ul class="note"><li>Note that you will now see a new file called <b>first</b> in the folder of <b>ToDoApp</b></li></ul>
+        </ul>
+            <p>
+                Now, we can start adding in some data in the database.
+                To do this, you can create .sql files which have SQL commands in them, like CREATE TABLE 
+                statements, and place these files in the ToDoApp folder. 
+                For example, if the .sql file is <b>maketable.sql</b>, then you can execute <i>.read maketable.sql</i> 
+                on the command-line. You can also execute simple <i>INSERT</i> or <i>SELECT</i> statements from the 
+                command-line, provided the tables you query have been created. Then, the output shows up in 
+                the command-line right below the query. 
+                We are now ready to integrate the NetBeans project with SQLite.
+            </p>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Changing Between Scenes</h2>
+        <p>This section contains information on how to navigate between pages, which will be important in establishing a login.</p>
+        <ul>
+            <li>Right-click on the package name in NetBeans, i.e., todoapp, and click on Java -> New Empty FXML and call it <b>FXMLHomePage</b>.</li>
+            <li>Then, hit next, check the box ‘Use Java Controller’, and hit next.</li>
+            <li>We will not be using CSS for now, so hit finish.</li>
+            <li>Following this, right-click on <b>FXMLDocument.fxml</b>, and click on Open.  This will open up a new SceneBuilder window.</li>
+            <ul class="note"><li>Note that by default, there will already be a button on the screen!</li></ul>
+        </ul>
+        <p>We will add a TextField using a simple drag and drop from the left panel under Controls. You could 
+            also add a label or two on top, looking like this:</p>
+        <p>TODO: Some picture</p>
+        <p>Note that the red label at the bottom is only to be displayed if the user enters the incorrect 
+           password. Then, we can create the home page, by opening <b>FXMLHomePage.fxml</b> in SceneBuilder. 
+           The home page can have a simple layout for now, including just one label displaying the words 
+           ‘Home Page’.</p>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Changing Between Scenes (cont.)</h2>
+        <ul>
+            <li>In the file <b>FXMLDocumentController.java</b>, go to the automatically generated method 
+                <i>handleButtonAction()</i>, which will correspond to the login button and delete the contents of the method.</li>
+            <li>Add a new line <i>Parent home_page_parent 
+                = FXMLLoader.load(getClass().getResource(“FXMLHomePage.fxml”);</i>.</li>
+            <li>You will need to right click on Parent and click on Fix Imports to make this line work.</li>
+            <li>Do this whenever a class you’re using produces an error.</li>
+            <ul class="note"><li>Note that there is file I/O involved here, so we will need to append 
+                ‘throws IOException’ after <i>void handleButtonAction(ActionEvent event)</i>.</li></ul>
+            <li>Then add the line <i>Scene home_page_scene = new Scene(home_page_parent);</i>, this corresponds to SceneBuilder.</li>
+            <li>Following this, add the line <i>Stage app_stage = (Stage)((Node) event.getSource().getScene().getWindow());</i>.</li>
+            <ul class="note"><li>Note that a stage is the place where everything takes place!</li></ul>
+            <li>To check what each method in that line does, just right click on it and view the Javadoc.</li>
+            <li>Change the stage to the home page by using the <i>setScene()</i> method.</li>
+        </ul>
+        <p>In the end, the <i>handleButtonAction()</i> method will look something like this:</p>
+        <p>TODO: Add a picture</p>
+        <ul>
+            <li>Then, hit the play button and hit the button once the page shows up. It will navigate to the home page screen.</li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="divStyle">
+        <h2 class="header">Verify Login Credentials</h2>
+        <ul>
+            <li>The first thing to do here would be to make sure that there is a table in the SQLite database with some data in it.</li>
+            <li>This was covered in the first section of this tutorial, and is done by simple INSERT statements in the appropriate table.</li>
+            <li>Once this is done, we can go ahead and write code in the controller classes that we are concerned with.</li>
+            <li>Make sure that all the components of the Welcome page, i.e., <b>FXMLDocument.xml</b>, have IDs whose names
+                are known, so that they can be accessed in the code. </li>
+            <li>The IDs of the components are the means by which we will be able to update the content of these fields.</li>
+            <li>The ID can be changed by going to SceneBuilder, clicking on the desired component, and changing its fxid on the right panel, under Code.</li>
+            <li>Make sure you hit save in the SceneBuilder window!</li>
+            <li>Then, you need to have the tag @FXML, followed by private declarations of each of these components with 
+                the variable name corresponding to the FXID, in order to link the components in SceneBuilder to the code.</li>
+        </ul>
+        <p>For example, the label with fxid ‘invalid_label’ in SceneBuilder is declared as an variable like this: <i>@FXML private Label invalid_label;</i></p>
+    </div>
+
+    <div class="divStyle">
+        <h2 class="header">Verify Login Credentials (cont.)</h2>
+        <ul>
+            <li>Create a function called <i>isValidCredentials()</i> in the <b>FXMLDocumentController.java</b> file.</li>
+            <li>The purpose of this function is to return a true or false depending on whether or not the credentials the user has
+                entered exist in the database.</li>
+            <li>If they don’t, the error label at the bottom (in red) will be displayed.</li>
+            <li>However, if they do, then navigate to the home page using the <i>setScene()</i> and <i>show()</i> methods, as illustrated in 
+                the first part of this tutorial.</li>
+            <li> In order to clear or edit a TextField in SceneBuilder, simple methods like <i>clear()</i> and <i>setText()</i> can be used.</li>
+        </ul>
+        <p>For example, <i>username_box.clear()</i> will clear the username text field, and <i>invalid_label.setText(“Sorry, invalid credentials!”)</i>
+            will render the label for ‘invalid_label’.</p>
+    </div>
+
+
+    <div class="divStyle">
+        <h2 class="header">Connecting The Database</h2>
+        <ul>
+            <li>First, navigate to the <i>isValidCredentials()</i> function you have just created.</li>
+            <li>In order to do this, you need a Connection variable and a java.sql.Statement variable.</li>
+            <li>Call these ‘conn’ and ‘statement’ respectively, and initialize them both to null.</li>
+            <li>‘conn’ is used to connect to the database, and ‘statement’ is used to send SQL statements to it.</li>
+            <ul class="note"><li>Note, the code that follows will be enclosed in a try-catch statement to ensure 
+                that the forthcoming errors that may pop up are dealt with suitably.</li></ul>
+            <li>The first line you write is: <i>conn = DriverManager.getConnection(“jdbc:sqlite:first.db”);</i>.</li>
+            <li>Here we are connecting to the database that was created in the first part.</li>
+            <li>Then write: <i>conn.setAutoCommit(false);</i></li>
+            <li>Next we need to create the statement, so write: <i>statement = conn.createStatement();</i></li>
+            <li>We now need to verify the data corresponding to the credentials entered by the user by writing
+                the following lines of code: <i>ResultSet rs = statement.executeQuery(“SELECT * FROM Users 
+                WHERE USERNAME = “ + “‘“ + username_box.getText() + “‘“ + “ AND PASSWORD = “ + “‘“ + 
+                password_box.getText() + “‘“);</i> </li>
+            <li>This will generate the record corresponding to the entered credentials, and will be stored in the object ‘rs’.</li>
+            <li>Then, we can access the data in that object and check whether it is valid.</li>
+        </ul>
+        <p>This code to do this as follow: <br /><br />
+            <i>
+            boolean let_in = false; <br />
+            while(rs.next()) { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;if (rs.getString(“USERNAME”) != null && rs.getString(“PASSWORD”) != null) { <br /> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String username = rs.getString(“USERNAME”); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(“USERNAME = “ + username); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String password = rs.getString(“PASSWORD”); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(“PASSWORD = “ + password); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let_in = true; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+            } <br />
+            rs.close(); <br /> 
+            statement.close(); <br /> 
+            c.close();
+            </i>
+        </p>
+        <p>
+            In the above code, we are first checking whether the result set has any records. 
+            We then set the let_in variable to true, indicating that the credentials are valid and we are
+            letting the user into the database.
+        </p>
+    </div>
+</body>
+
+<style>
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

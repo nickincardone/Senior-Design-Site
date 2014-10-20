@@ -1,49 +1,50 @@
 <body style="background-color: #CCFFBB; align-content:center;">
     <h1 style="text-align: center;">Java FX Hello World Tutorial</h1>
     
-    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
-        <h2 style="background-color: #CCCCCC;"> What is Java FX? </h2>
-        <ul style="font-size: 1.5em;">
+    <div class="divStyle">
+        <h2 class="header"> What is Java FX? </h2>
+        <ul>
             <li>Java FX is a software platform for creating and developing rich internet applications that can run across a wide variety of devices.</li>
             <li>Java FX is popularly known as an enhanced version of Swing.</li>
         </ul>
     </div>
 
-    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
-        <h2 style="background-color: #CCCCCC;">Model-View-Controller (MVC)</h2>
-        <ul style="font-size: 1.5em;">
+    <div class="divStyle">
+        <h2 class="header">Model-View-Controller (MVC)</h2>
+        <ul>
             <li>Java FX incorporates the MVC design pattern.</li>
-            <li>For a high level overview of the MVC pattern, look at the figure below:</li></ul>
-        <center><img style="background-color: white;" src="https://lh5.googleusercontent.com/3ugbbJPsAkq7z1yYlOo10NKfD-c_g9X9usf4SiIJAC-x5pFOgJTwgSvlLvj-V-Px4rlbM-7EfhzIpBMkpLQ-p9z9VrCWD4cgjkVJmyWqcKzk6COiYESak8hGS3bxhRTH3A" width=200 height=220 /></center>
+            <li>For a high level overview of the MVC pattern, look at the figure below:</li>
+        </ul>
+        <center><img style="background-color: white;" src="https://lh5.googleusercontent.com/3ugbbJPsAkq7z1yYlOo10NKfD-c_g9X9usf4SiIJAC-x5pFOgJTwgSvlLvj-V-Px4rlbM-7EfhzIpBMkpLQ-p9z9VrCWD4cgjkVJmyWqcKzk6COiYESak8hGS3bxhRTH3A" width=700 height=720 /></center>
     </div>
 
-    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
-        <h2 style="background-color: #CCCCCC;">Software Installation</h2>
-        <ul style="font-size: 1.5em;">
+    <div class="divStyle">
+        <h2 class="header">Software Installation</h2>
+        <ul>
             <li>Downloaded and install NetBeans via <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">this link</a>.</li>
             <li>Next, download and intall SceneBuilder via <a href="http://www.oracle.com/technetwork/java/javase/downloads/sb2download-2177776.html">this link</a>.</li>
-                <ul style="padding-left: 15px;"><li>Note: Choose to install SceneBuilder in the default location for use during this tutorial.</li></ul>
+                <ul class="note"><li>Note: Choose to install SceneBuilder in the default location for use during this tutorial.</li></ul>
             <li>Then, in NetBeans, go to <i>File</i> -&gt; <i>New Project</i> -&gt; <i>Java FX</i> -&gt; <i>Java FXML Application</i> -&gt; Name the project as <b>OurFirstProject</b>.</li>
             <li>After doing this, you should see three files pop up in the navigator on the left hand side of the screen.</li>
             <li>In the file OurFirstProject.java, you will see the start() method. this is the entry point for Java FX applications</li>
         </ul>
-        <p style="font-size: 1.5em;">We will now learn how to use these files to make a simple UI which allows a user to click a button and generate the text ‘Hello World!’.</p>
+        <p>We will now learn how to use these files to make a simple UI which allows a user to click a button and generate the text ‘Hello World!’.</p>
     </div>
 
-    <div style="background-color: #F0F0F0; width: 50%; margin: 0 auto; padding-bottom: 10px;">
-        <h2 style="background-color: #CCCCCC;">Developing the Hello World UI</h2>
-        <ul style="font-size: 1.5em;">
+    <div class="divStyle">
+        <h2 class="header">Developing the Hello World UI</h2>
+        <ul>
             <li>Right click on the file <b>FXMLDocument.fxml</b> and click <i>Open</i>.</li>
             <li>A dialog box will pop up, which contains a user interface to allow the user to create any kind of layout they want.</li>
-            <ul style="padding-left: 15px;"><li>Note: This UI is provided by SceneBuilder, which we installed earlier.</li></ul>
+            <ul class="note"><li>Note: This UI is provided by SceneBuilder, which we installed earlier.</li></ul>
             <li>By default, the layout contains a button labelled <i>Click Me!</i>.</li>
             <li>On the left, you can see AnchorPane, which is the root of the UI. </li> 
             <li>The AnchorPane contains the Button we see displayed.</li>
         </ul>
-        <center><img src="https://lh3.googleusercontent.com/2lEfTtawJnucmIQXgwgTGWBiqiFjB_9q_XmDiMCw_zKUYx6HwTm8qr5Z3cTB4HtHb2Zen29FzTqaS4U0DM8Mct-_qO1_BwwktuTcjEUXIPscrSsHBRBNzg8Dhn1qqZa4TQ" width=624 height=369 /></center>
-        <p style="font-size: 1.5em;">
+        <center><img src="https://lh3.googleusercontent.com/2lEfTtawJnucmIQXgwgTGWBiqiFjB_9q_XmDiMCw_zKUYx6HwTm8qr5Z3cTB4HtHb2Zen29FzTqaS4U0DM8Mct-_qO1_BwwktuTcjEUXIPscrSsHBRBNzg8Dhn1qqZa4TQ" width=700 height=400 /></center>
+        <p>
             Our task now is to somehow control what happens when we click on the button! </p> 
-        <ul style="font-size: 1.5em;">
+        <ul>
             <li>The first step in doing this is to create a known ID for the button.</li>
             <li>On the right hand side of the SceneBuilder window, collapse the Properties tab and click on the Code tab.</li>
             <li>Change the field corresponding to fx:id to <i>helloButton</i></li>
@@ -55,7 +56,28 @@
             <li>This is what causes <i>Hello World!</i> to be displayed on the screen.</li>
             <li>We now hit run, which is the green play button below the menu bar.</li>
         </ul>
-        <p style="font-size: 1.5em;">You can now see the output, as shown below:</p>
-        <center><img src="https://lh5.googleusercontent.com/V7uDd-EmosSPu0-fX_qPJQYqEWs7UdO7y_I2yLoreRlkR1M22EU4QuOwvobtpxAHDqWpJlHyjO51Wg7M8_0sj1kgI7qgGeFvhLtKjRkgKBrDNxAkzc62QO66VNrHkaRZuw" width=336 height=236 /></center>
+        <p>You can now see the output, as shown below:</p>
+        <center><img src="https://lh5.googleusercontent.com/V7uDd-EmosSPu0-fX_qPJQYqEWs7UdO7y_I2yLoreRlkR1M22EU4QuOwvobtpxAHDqWpJlHyjO51Wg7M8_0sj1kgI7qgGeFvhLtKjRkgKBrDNxAkzc62QO66VNrHkaRZuw" width=700 height=500 /></center>
     </div>
 </body>
+
+<style>
+    ul{
+        font-size: 24px;
+    }
+    p {
+        font-size: 24px;
+    }
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+    .note {
+        padding-left: 15px;
+    }
+    .header {
+        background-color: #CCCCCC;
+    }
+</style>
