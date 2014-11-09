@@ -16,7 +16,7 @@ function gruntConfig(grunt) {
     concat: require('./grunt/concat'),
     watch: require('./grunt/watch'),
     uglify: require('./grunt/uglify'),
-    //bgShell: require('./grunt/bgShell'),
+    bgShell: require('./grunt/bgShell'),
     ngtemplates: require('./grunt/ngtemplates'),
     karma: require('./grunt/karma'),
     sass: require('./grunt/sass')
@@ -28,6 +28,7 @@ function gruntConfig(grunt) {
     }
   }
 
+  grunt.registerTask('server', ['bgShell:server']);
   grunt.registerTask('build:dev', [
     'ngtemplates:dev',
     'concat',
