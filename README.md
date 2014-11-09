@@ -38,4 +38,5 @@ if not and you do not want to install ruby look [here](http://sass-lang.com/libs
 Clone repo and run:
 `sudo npm install`
 
-Now run `grunt` and open `index.html`
+Now run `grunt && node server'
+and navigate your browser to localhost:8080
