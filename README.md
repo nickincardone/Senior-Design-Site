@@ -39,3 +39,7 @@ Clone repo and run:
 `sudo npm install`
 
 Now run `grunt && node server` and navigate to port 8080
+=======
+Now run `grunt && node server'
+and navigate your browser to localhost:8080
+

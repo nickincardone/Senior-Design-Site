@@ -32,7 +32,7 @@ function gruntConfig(grunt) {
   grunt.registerTask('build:dev', [
     'ngtemplates:dev',
     'concat',
-    'sass:dev'
+    //'sass:dev'
   ]);
   grunt.registerTask('build:dist', [
     'build:dev',
