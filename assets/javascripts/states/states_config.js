@@ -49,6 +49,10 @@
         url: '/tutorials/0',
         templateUrl: '0.html'
       })
+      .state('text.tutorial1', {
+        url: '/tutorials/1',
+        templateUrl: '1.html'
+      })
       .state('about', {
         url: '/about',
         views: {

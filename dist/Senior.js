@@ -40,28 +40,64 @@
       },
       {
         'title': 'JavaFX Tutorial 2',
-        'src': '//www.youtube.com/embed/a1Y73sPHKxw',
-        'subheading': 'Subheading of Video 2',
+        'src': '//www.youtube.com/embed/Co0Kw5IBSvQ',
+        'subheading': 'Setting Up Our Database',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 3',
-        'src': '//www.youtube.com/embed/l-gQLqv9f4o',
-        'subheading': 'Subheading of Video 3',
+        'src': '//www.youtube.com/embed/LDVztNtJWOo',
+        'subheading': 'Changing Between Scenes',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 4',
-        'src': '//www.youtube.com/embed/5WkZUXq9KPc',
-        'subheading': 'Subheading of Video 4',
+        'src': '//www.youtube.com/embed/SCyZdWZi7C0',
+        'subheading': 'Login Page Using SQLite Database',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 5',
-        'src': '//www.youtube.com/embed/AYxu_MQSTTY',
-        'subheading': 'Subheading of Video 5',
+        'src': '//www.youtube.com/embed/cqZRe9iKzo8',
+        'subheading': 'CSS with JavaFX',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-      }
+      },
+      {
+        'title': 'JavaFX Tutorial 6',
+        'src': '//www.youtube.com/embed/ZtemWZ5IQeM',
+        'subheading': 'VMore feature for our ToDoapp - Tasks DB',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 7',
+        'src': '//www.youtube.com/embed/eq5Sup5vFL4',
+        'subheading': 'Insert Features for our App',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 8',
+        'src': '//www.youtube.com/embed/332b94pl6lg',
+        'subheading': 'Remove and Organize features',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 9',
+        'src': '//www.youtube.com/embed/0yF3FYQ6P-c',
+        'subheading': 'Edit Features',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 10',
+        'src': '//www.youtube.com/embed/arCkmFn0fo0',
+        'subheading': 'Dialog Boxes and Wrap-Up',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      }  /**,
+      {
+        'title': 'JavaFX Tutorial 11',
+        'src': '//www.youtube.com/embed/arCkmFn0fo0',
+        'subheading': 'fkdkf',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      } */
     ];
 
     $scope.videoUrl = function (vidUrl) {
@@ -184,6 +220,10 @@
         url: '/tutorials/0',
         templateUrl: '0.html'
       })
+      .state('text.tutorial1', {
+        url: '/tutorials/1',
+        templateUrl: '1.html'
+      })
       .state('about', {
         url: '/about',
         views: {
@@ -218,7 +258,7 @@ angular.module('ni.Templates', []).run(['$templateCache', function($templateCach
 
 
   $templateCache.put('tutorials.html',
-    "<div class=\"jumbotron\"><h1>JavaFX Tutorials</h1><p class=\"lead\">Tutorials Originally Designed for CS 2340 at Georgia Tech</p></div><div class=\"tutorial-list\"><ul class=\"tutorials\"><li><a ui-sref=\"text.tutorial0\">Tutorial Zero</a><p>Description of Video</p></li><li><a ui-sref=\"\">Tutorial One</a><p>Description of Video</p></li><li><a ui-sref=\"\">Tutorial One</a><p>Description of Video</p></li><li><a ui-sref=\"\">Tutorial One</a><p>Description of Video</p></li><li><a ui-sref=\"\">Tutorial One</a><p>Description of Video</p></li></ul></div>"
+    "<div class=\"jumbotron\"><h1>JavaFX Tutorials</h1><p class=\"lead\">Tutorials Originally Designed for CS 2340 at Georgia Tech</p></div><div class=\"tutorial-list\"><ul class=\"tutorials\"><li><a ui-sref=\"text.tutorial0\">Tutorial One</a><p>Installation and Hello World with Scene Builder</p></li><li><a ui-sref=\"text.tutorial1\">Tutorial Two</a><p>Setting Up Our Database</p></li><li><a ui-sref=\"\">Tutorial Three</a><p>Changing Between Scenes</p></li><li><a ui-sref=\"\">Tutorial Four</a><p>Login Page Using SQLite Database</p></li><li><a ui-sref=\"\">Tutorial Five</a><p>CSS with JavaFX</p></li><li><a ui-sref=\"\">Tutorial Six</a><p>VMore feature for our ToDoapp - Tasks DB</p></li><li><a ui-sref=\"\">Tutorial Seven</a><p>Insert Features for our App</p></li><li><a ui-sref=\"\">Tutorial Eight</a><p>Remove and Organize features</p></li><li><a ui-sref=\"\">Tutorial Nine</a><p>Edit Features</p></li><li><a ui-sref=\"\">Tutorial Ten</a><p>Dialog Boxes and Wrap-Up</p></li></ul></div>"
   );
 
 
@@ -275,7 +315,7 @@ angular.module('ni.Templates', []).run(['$templateCache', function($templateCach
 
 
   $templateCache.put('video.html',
-    "<div id=\"example\" class=\"container video-container\"><div class=\"row\"><div class=\"lessons-nav col-md-3 col-xs-12\"><div ng-repeat=\"video in videos\"><div ng-class=\"{active: (currentVideo == $index)}\" ng-click=\"setCurrentVideo($index)\" class=\"btn\">{{video.title}}</div></div></div><center><div class=\"video-panel col-md-9 col-xs-12\"><div class=\"video-title\"><h3>{{videos[currentVideo].title}}</h3></div><iframe width=\"420\" height=\"315\" ng-src=\"{{videoUrl(videos[currentVideo].src)}}\" frameborder=\"0\" allowfullscreen></iframe><div class=\"video-subtitle\"><h4>{{videos[currentVideo].subheading}}</h4></div><div class=\"video-description\">{{videos[currentVideo].description}}</div><div class=\"bottom-nav\"><div ng-disabled=\"currentVideo == 0\" ng-click=\"previousVideo()\" class=\"pull-left btn\">Previous</div><a ui-sref=\"text.tutorials\" class=\"btn\">View Lesson's Text</a><div ng-disabled=\"currentVideo == videos.length - 1\" ng-click=\"nextVideo()\" class=\"pull-right btn\">Next</div></div></div></center></div></div>"
+    "<div id=\"example\" class=\"container video-container\"><div class=\"row\"><div class=\"lessons-nav col-sm-3 hidden-xs\"><div ng-repeat=\"video in videos\"><div ng-class=\"{active: (currentVideo == $index)}\" ng-click=\"setCurrentVideo($index)\" class=\"btn\">{{video.title}}</div></div></div><center><div class=\"video-panel col-sm-9 col-xs-12\"><div class=\"video-title\"><h3>{{videos[currentVideo].title}}</h3></div><iframe width=\"420\" height=\"315\" ng-src=\"{{videoUrl(videos[currentVideo].src)}}\" frameborder=\"0\" allowfullscreen></iframe><div class=\"video-subtitle\"><h4>{{videos[currentVideo].subheading}}</h4></div><div class=\"video-description\">{{videos[currentVideo].description}}</div><div class=\"bottom-nav\"><div ng-disabled=\"currentVideo == 0\" ng-click=\"previousVideo()\" class=\"pull-left btn\">Previous</div><a ui-sref=\"text.tutorials\" class=\"btn\">View Lesson's Text</a><div ng-disabled=\"currentVideo == videos.length - 1\" ng-click=\"nextVideo()\" class=\"pull-right btn\">Next</div></div></div></center></div></div>"
   );
 
 }]);

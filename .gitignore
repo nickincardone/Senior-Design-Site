@@ -4,3 +4,4 @@ node_modules/
 spec/reports/
 assets/components
 assets/javascripts/templates_module.js
+npm-debug.log

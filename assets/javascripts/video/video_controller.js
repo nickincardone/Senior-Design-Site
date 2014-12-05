@@ -24,28 +24,64 @@
       },
       {
         'title': 'JavaFX Tutorial 2',
-        'src': '//www.youtube.com/embed/a1Y73sPHKxw',
-        'subheading': 'Subheading of Video 2',
+        'src': '//www.youtube.com/embed/Co0Kw5IBSvQ',
+        'subheading': 'Setting Up Our Database',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 3',
-        'src': '//www.youtube.com/embed/l-gQLqv9f4o',
-        'subheading': 'Subheading of Video 3',
+        'src': '//www.youtube.com/embed/LDVztNtJWOo',
+        'subheading': 'Changing Between Scenes',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 4',
-        'src': '//www.youtube.com/embed/5WkZUXq9KPc',
-        'subheading': 'Subheading of Video 4',
+        'src': '//www.youtube.com/embed/SCyZdWZi7C0',
+        'subheading': 'Login Page Using SQLite Database',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
         'title': 'JavaFX Tutorial 5',
-        'src': '//www.youtube.com/embed/AYxu_MQSTTY',
-        'subheading': 'Subheading of Video 5',
+        'src': '//www.youtube.com/embed/cqZRe9iKzo8',
+        'subheading': 'CSS with JavaFX',
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-      }
+      },
+      {
+        'title': 'JavaFX Tutorial 6',
+        'src': '//www.youtube.com/embed/ZtemWZ5IQeM',
+        'subheading': 'VMore feature for our ToDoapp - Tasks DB',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 7',
+        'src': '//www.youtube.com/embed/eq5Sup5vFL4',
+        'subheading': 'Insert Features for our App',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 8',
+        'src': '//www.youtube.com/embed/332b94pl6lg',
+        'subheading': 'Remove and Organize features',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 9',
+        'src': '//www.youtube.com/embed/0yF3FYQ6P-c',
+        'subheading': 'Edit Features',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        'title': 'JavaFX Tutorial 10',
+        'src': '//www.youtube.com/embed/arCkmFn0fo0',
+        'subheading': 'Dialog Boxes and Wrap-Up',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      }  /**,
+      {
+        'title': 'JavaFX Tutorial 11',
+        'src': '//www.youtube.com/embed/arCkmFn0fo0',
+        'subheading': 'fkdkf',
+        'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      } */
     ];
 
     $scope.videoUrl = function (vidUrl) {

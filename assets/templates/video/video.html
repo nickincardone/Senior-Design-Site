@@ -1,6 +1,6 @@
 <div id="example" class="container video-container">
   <div class="row">
-    <div class="lessons-nav col-md-3 col-xs-12">
+    <div class="lessons-nav col-sm-3 hidden-xs">
       <div ng-repeat="video in videos">
       <div ng-class="{active: (currentVideo == $index)}" ng-click="setCurrentVideo($index)" class="btn">
         {{video.title}}
@@ -8,7 +8,7 @@
       </div>
     </div>
     <center>
-    <div class="video-panel col-md-9 col-xs-12">
+    <div class="video-panel col-sm-9 col-xs-12">
       <div class="video-title"><h3>{{videos[currentVideo].title}}</h3></div>
       <iframe width="420" height="315" ng-src="{{videoUrl(videos[currentVideo].src)}}" frameborder="0" allowfullscreen></iframe>
       <div class="video-subtitle"><h4>{{videos[currentVideo].subheading}}</h4></div>
