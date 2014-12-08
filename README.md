@@ -25,21 +25,10 @@ Ensure node is installed
 
 run `npm install -g grunt-cli` 
 
-### Sass
-
-You need to have sass installed to compile the css file
-
-if you have ruby you can install sass with `sudo gem install sass` 
-
-if not and you do not want to install ruby look [here](http://sass-lang.com/libsass)
-
 ## Setup
 
 Clone repo and run:
-`sudo npm install`
+`sudo npm install` which will install all node dependicies
 
 Now run `grunt && node server` and navigate to port 8080
-=======
-Now run `grunt && node server'
-and navigate your browser to localhost:8080
 
