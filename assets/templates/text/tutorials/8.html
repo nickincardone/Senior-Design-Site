@@ -5,86 +5,35 @@
     to the various fields of the ListView entry to be edited. The code for this is as follows (note the similarity to tutorial #8):
 </p>
 <p dir="ltr">
-    Connection c = null;
-</p>
-<p dir="ltr">
-    Statement stat = null;
-</p>
-<p dir="ltr">
-    try {
-</p>
-<p dir="ltr">
-    Class.forName(“org.sqlite.JDBC”);
-</p>
-<p dir="ltr">
-    c = DriverManager.getConnection(“jdbc:sqlite:first.db”);
-</p>
-<p dir="ltr">
-    c.setAutoCommit(false);
-</p>
-<p dir="ltr">
-    stat = c.createStatement();
-</p>
-<p dir="ltr">
-    String selected_item = tasks_listview.getSelectionModel().getSelectedItem().toString();
-</p>
-<p dir="ltr">
-    String queryString = “SELECT * FROM TASKS WHERE TIMING + “+ “‘“ + selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length()) +
-    “‘“ + “;”;
-</p>
-<p dir="ltr">
-    ResultSet rs = stat.executeQuery(queryString);
-</p>
-<p dir="ltr">
-    String time_text = selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length();
-</p>
-<p dir="ltr">
-    //The following five variables are subject to the exact formatting of the date string that the database requires.
-</p>
-<p dir="ltr">
-    String time_text_year = time_text.substring(0,4);
-</p>
-<p dir="ltr">
-    String time_text_month = time_text.substring(5,7);
-</p>
-<p dir="ltr">
-    String time_text_day = time_text.substring(8,10);
-</p>
-<p dir="ltr">
-    String time_text_hour = time_text.substring(11,13);
-</p>
-<p dir="ltr">
-    String time_text_minute = time_text.substring(14,14);
-</p>
-<p dir="ltr">
-    while (rs.next()) {
-</p>
-<p dir="ltr">
-    //These are the other fields of the Tasks table.
-</p>
-<p dir="ltr">
-    title_text = rs.getSTring(“TITLE”);
-</p>
-<p dir="ltr">
-    location_text = rs.getString(“LOCATION”);
-</p>
-<p dir="ltr">
-    notes_text = rs.getString(“NOTES”);
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    rs.close();
-</p>
-<p dir="ltr">
-    } catch (Exception ex) {
-</p>
-<p dir="ltr">
-    System.err.println(“Error”);
-</p>
-<p dir="ltr">
-    }
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Connection c <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+Statement stat <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">try</span> <span style="color: #333333">{</span>
+    Class<span style="color: #333333">.</span><span style="color: #0000CC">forName</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>org<span style="color: #333333">.</span><span style="color: #0000CC">sqlite</span><span style="color: #333333">.</span><span style="color: #0000CC">JDBC</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    c <span style="color: #333333">=</span> DriverManager<span style="color: #333333">.</span><span style="color: #0000CC">getConnection</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #997700; font-weight: bold">jdbc:sqlite:</span>first<span style="color: #333333">.</span><span style="color: #0000CC">db</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    c<span style="color: #333333">.</span><span style="color: #0000CC">setAutoCommit</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+    stat <span style="color: #333333">=</span> c<span style="color: #333333">.</span><span style="color: #0000CC">createStatement</span><span style="color: #333333">();</span>
+    String selected_item <span style="color: #333333">=</span> tasks_listview<span style="color: #333333">.</span><span style="color: #0000CC">getSelectionModel</span><span style="color: #333333">().</span><span style="color: #0000CC">getSelectedItem</span><span style="color: #333333">().</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+    String queryString <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span>SELECT <span style="color: #333333">*</span> FROM TASKS WHERE TIMING <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>selected_item<span style="color: #333333">.</span><span style="color: #0000CC">lastIndexOf</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“\</span>t<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #333333">;</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">;</span>
+    ResultSet rs <span style="color: #333333">=</span> stat<span style="color: #333333">.</span><span style="color: #0000CC">executeQuery</span><span style="color: #333333">(</span>queryString<span style="color: #333333">);</span>
+    String time_text <span style="color: #333333">=</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>selected_item<span style="color: #333333">.</span><span style="color: #0000CC">lastIndexOf</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“\</span>t<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span>
+    <span style="color: #888888">//The following five variables are subject to the exact formatting of the date string that the database requires.</span>
+    String time_text_year <span style="color: #333333">=</span> time_text<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">);</span>
+    String time_text_month <span style="color: #333333">=</span> time_text<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">7</span><span style="color: #333333">);</span>
+    String time_text_day <span style="color: #333333">=</span> time_text<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">8</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">);</span>
+    String time_text_hour <span style="color: #333333">=</span> time_text<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">11</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">13</span><span style="color: #333333">);</span>
+String time_text_minute <span style="color: #333333">=</span> time_text<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">14</span><span style="color: #333333">,</span><span style="color: #0000DD; font-weight: bold">14</span><span style="color: #333333">);</span>
+<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>rs<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">//These are the other fields of the Tasks table.</span>
+    title_text <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getSTring</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>TITLE<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    location_text <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>LOCATION<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    notes_text <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>NOTES<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+rs<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">catch</span> <span style="color: #333333">(</span>Exception ex<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">err</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>Error<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">
@@ -93,50 +42,23 @@
 </p>
 <br/>
 <p dir="ltr">
-    FXMLLoader loader = new FXMLLoader(getClass().getResource(“FXMLDriverPage.fxml”));
-</p>
-<p dir="ltr">
-    Scene notes_scene = new Scene((Pane) loader.load());
-</p>
-<p dir="ltr">
-    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-</p>
-<p dir="ltr">
-    app_stage.setScene(notes_scene);
-</p>
-<p dir="ltr">
-    FXMLInsertPageController controller = loader.&lt;FXMLInsertPageController&gt;getController();
-</p>
-<p dir="ltr">
-    /*The following methods have already been defined in the insert page controller, and their basic function is to set the values of the UI elements to those
-    specified in the variable passed in. */
-</p>
-<p dir="ltr">
-    controller.setNotes(notes_text);
-</p>
-<p dir="ltr">
-    controller.setTitle(title_text);
-</p>
-<p dir="ltr">
-    controller.setLocation(location_text);
-</p>
-<p dir="ltr">
-    controller.setdatePicker(time_text_year, time_text_month, time_text_day);
-</p>
-<p dir="ltr">
-    //The hour can be modified, if needed, to accommodate the 24-hour clock.
-</p>
-<p dir="ltr">
-    controller.setHourMenuButton(time_text_hour);
-</p>
-<p dir="ltr">
-    controller.setMinuteMenuButton(time_text_minute);
-</p>
-<p dir="ltr">
-    deleteTask();
-</p>
-<p dir="ltr">
-    app_stage.show();
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">FXMLLoader loader <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> FXMLLoader<span style="color: #333333">(</span>getClass<span style="color: #333333">().</span><span style="color: #0000CC">getResource</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>FXMLDriverPage<span style="color: #333333">.</span><span style="color: #0000CC">fxml</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">));</span>
+Scene notes_scene <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scene<span style="color: #333333">((</span>Pane<span style="color: #333333">)</span> loader<span style="color: #333333">.</span><span style="color: #0000CC">load</span><span style="color: #333333">());</span>
+Stage app_stage <span style="color: #333333">=</span> <span style="color: #333333">(</span>Stage<span style="color: #333333">)</span> <span style="color: #333333">((</span>Node<span style="color: #333333">)</span> event<span style="color: #333333">.</span><span style="color: #0000CC">getSource</span><span style="color: #333333">()).</span><span style="color: #0000CC">getScene</span><span style="color: #333333">().</span><span style="color: #0000CC">getWindow</span><span style="color: #333333">();</span>
+app_stage<span style="color: #333333">.</span><span style="color: #0000CC">setScene</span><span style="color: #333333">(</span>notes_scene<span style="color: #333333">);</span>
+FXMLInsertPageController controller <span style="color: #333333">=</span> loader<span style="color: #333333">.&lt;</span>FXMLInsertPageController<span style="color: #333333">&gt;</span>getController<span style="color: #333333">();</span>
+<span style="color: #888888">/*The following methods have already been defined in the insert page controller, and their basic function is to set the values of the UI elements to those specified in the variable passed in. */</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setNotes</span><span style="color: #333333">(</span>notes_text<span style="color: #333333">);</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setTitle</span><span style="color: #333333">(</span>title_text<span style="color: #333333">);</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setLocation</span><span style="color: #333333">(</span>location_text<span style="color: #333333">);</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setdatePicker</span><span style="color: #333333">(</span>time_text_year<span style="color: #333333">,</span> time_text_month<span style="color: #333333">,</span> time_text_day<span style="color: #333333">);</span>
+<span style="color: #888888">//The hour can be modified, if needed, to accommodate the 24-hour clock.</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setHourMenuButton</span><span style="color: #333333">(</span>time_text_hour<span style="color: #333333">);</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setMinuteMenuButton</span><span style="color: #333333">(</span>time_text_minute<span style="color: #333333">);</span>
+deleteTask<span style="color: #333333">();</span>
+app_stage<span style="color: #333333">.</span><span style="color: #0000CC">show</span><span style="color: #333333">();</span>
+</pre></div>
+
 </p>
 <br/>
 <p>

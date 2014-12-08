@@ -12,7 +12,7 @@
 </p>
 <p dir="ltr">
     <img
-        src="https://lh4.googleusercontent.com/Tnp8Ldw0rE4NiS1UUO_dHEaI_vpnzQe5wFJ6GnKQZpAJxOZvWEhxvN_DnHPfmTQ9tqIz_b5SoPRYuncgzHKS9hU2DgbYcL5GKfbcq9A8sy77beTx_mYA86Bnoh--TG-W4A"
+        ng-src="dist/assets/images/tut6screenshot1.png"
         width="624px;"
         height="367px;"
         alt="tut6screenshot1.PNG"
@@ -24,15 +24,12 @@
     buttons have to be edited. For example,
 </p>
 <p dir="ltr">
-    private void hourMenuItemButtonAction(ActionEvent event) throws IOException {
-</p>
-<p dir="ltr">
-    MenuItem menu = (MenuItem) event.getSource();
-    <br/>
-    hour_menubutton.setText(menu.getText());
-</p>
-<p dir="ltr">
-    }
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">hourMenuItemButtonAction</span><span style="color: #333333">(</span>ActionEvent event<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">throws</span> IOException <span style="color: #333333">{</span>
+    MenuItem menu <span style="color: #333333">=</span> <span style="color: #333333">(</span>MenuItem<span style="color: #333333">)</span> event<span style="color: #333333">.</span><span style="color: #0000CC">getSource</span><span style="color: #333333">();</span>
+    hour_menubutton<span style="color: #333333">.</span><span style="color: #0000CC">setText</span><span style="color: #333333">(</span>menu<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">());</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <p dir="ltr">
     Here, ‘hour_menubutton’ is the MenuButton corresponding to the hour. When it is selected, the text of the menu button is edited to reflect the change. The
@@ -53,50 +50,24 @@
     Then, use the following code to perform the insert operation into the table:
 </p>
 <p dir="ltr">
-    public void insertStatement() {
-</p>
-<p dir="ltr">
-    Connection c = null;
-    <br/>
-    Statement stat = null;
-</p>
-<p dir="ltr">
-    try {
-</p>
-<p dir="ltr">
-    Class.forName(“org.sqlite.JDBC”);
-</p>
-<p dir="ltr">
-    c = DriverManager.getConnection(“jdbc:sqlite:first.db”);
-</p>
-<p dir="ltr">
-    c.setAutoCommit(false);
-</p>
-<p dir="ltr">
-    stat = c.createStatement();
-</p>
-<p dir="ltr">
-    stat.executeUpdate(query);
-</p>
-<p dir="ltr">
-    stat.close();
-</p>
-<p dir="ltr">
-    c.commit();
-</p>
-<p dir="ltr">
-    c.close();
-</p>
-<p dir="ltr">
-    } catch (Exception e) {
-    <br/>
-    System.err.println(“Error”);
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    }
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">insertStatement</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+Connection c <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+Statement stat <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">try</span> <span style="color: #333333">{</span>
+    Class<span style="color: #333333">.</span><span style="color: #0000CC">forName</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>org<span style="color: #333333">.</span><span style="color: #0000CC">sqlite</span><span style="color: #333333">.</span><span style="color: #0000CC">JDBC</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    c <span style="color: #333333">=</span> DriverManager<span style="color: #333333">.</span><span style="color: #0000CC">getConnection</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #997700; font-weight: bold">jdbc:sqlite:</span>first<span style="color: #333333">.</span><span style="color: #0000CC">db</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+    c<span style="color: #333333">.</span><span style="color: #0000CC">setAutoCommit</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+    stat <span style="color: #333333">=</span> c<span style="color: #333333">.</span><span style="color: #0000CC">createStatement</span><span style="color: #333333">();</span>
+    stat<span style="color: #333333">.</span><span style="color: #0000CC">executeUpdate</span><span style="color: #333333">(</span>query<span style="color: #333333">);</span>
+    stat<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+    c<span style="color: #333333">.</span><span style="color: #0000CC">commit</span><span style="color: #333333">();</span>
+    c<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">catch</span> <span style="color: #333333">(</span>Exception e<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">err</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>Error<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">

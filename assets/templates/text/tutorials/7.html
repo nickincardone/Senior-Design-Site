@@ -4,11 +4,12 @@
 </p>
 <p dir="ltr">
     <img
-        src="https://lh4.googleusercontent.com/3jzuKK8NZzwS0zPHix_HFWAnIhCjsTT7vqS45LjRKNaqH8pB2OeqBL5T5KIx1I9d33CPisVmuEmhtDIIxliZqzFnUgZiHYtIlBCjd_8oIx23WJlLp0vxV96B2WtetZ8y2Q"
+        ng-src="dist/assets/images/tut8screenshot1.png"
         width="624px;"
         height="360px;"
         alt="tut8screenshot1.PNG"
     />
+    <br/>
     The back button will take us back to the viewing page (shown in tutorial #7). As a reminder, the text field in this page will display the notes
     corresponding to the selected item in the list view on the other page (Notes is a field in the database table ‘Tasks’). The selected item can be obtained
     from the ListView as follows:
@@ -21,23 +22,17 @@
     The next step is to obtain the ListView values corresponding to the selected item, and create a SELECT query out of it. This is done by suitably parsing
     the string ‘selected_item’ obtained above. The following snippet is one way of performing this task:
     <br/>
-    String queryString = “SELECT NOTES FROM TASKS WHERE TIMING = “ + “‘“ + selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length())
-    + “‘“ + “;”;
+    
 </p>
 <p dir="ltr">
-    ResultSet rs = stat.executeQuery(queryString);
-</p>
-<p dir="ltr">
-    while (rs.next()) {
-</p>
-<p dir="ltr">
-    notes = rs.getString(“NOTES”); //Assigning the appropriate notes to the ‘notes’ variable
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    rs.close();
+   <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">String queryString <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span>SELECT NOTES FROM TASKS WHERE TIMING <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>selected_item<span style="color: #333333">.</span><span style="color: #0000CC">lastIndexOf</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“\</span>t<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> selected_item<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">())</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span><span style="color: #333333">;</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">;</span>
+ResultSet rs <span style="color: #333333">=</span> stat<span style="color: #333333">.</span><span style="color: #0000CC">executeQuery</span><span style="color: #333333">(</span>queryString<span style="color: #333333">);</span>
+<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>rs<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+    notes <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>NOTES<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span> <span style="color: #888888">//Assigning the appropriate notes to the ‘notes’ variable</span>
+<span style="color: #333333">}</span>
+rs<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">
@@ -46,46 +41,26 @@
     is even shown. The passing of values between two different scenes can be done as follows:
     <br/>
     <br/>
-    FXMLLoader loader = new FXMLLoader(getClass().getResource(“FXMLNotes.fxml”);
+   
 </p>
 <p dir="ltr">
-    Scene notes_scene = new Scene((Pane) loader.load());
-</p>
-<p dir="ltr">
-    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-</p>
-<p dir="ltr">
-    app_stage.hide();
-</p>
-<p dir="ltr">
-    app_stage.setScene(notes_scene);
-</p>
-<p dir="ltr">
-    FXMLNotesController controller = loader.&lt;FXMLNotesController&gt;getController();
-</p>
-<p dir="ltr">
-    controller.setNotes(notes);
-</p>
-<p dir="ltr">
-    app_stage.show();
-</p>
-<br/>
-<p dir="ltr">
-    Another button that we are concerned with here is the ‘Complete’ button. In its action method, we get the index of the ListView row to be deleted, via:
-    <br/>
-    Integer delete_index = tasks_listview.getSelectionModel().getSelectedIndex();
-</p>
-<p dir="ltr">
-    if (!delete_index.equals(null)) {
-</p>
-<p dir="ltr">
-    deleteTask();
-</p>
-<p dir="ltr">
-    refreshList(); //see tutorial #7 for an overview of this method
-</p>
-<p dir="ltr">
-    }
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">FXMLLoader loader <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> FXMLLoader<span style="color: #333333">(</span>getClass<span style="color: #333333">().</span><span style="color: #0000CC">getResource</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>FXMLNotes<span style="color: #333333">.</span><span style="color: #0000CC">fxml</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+Scene notes_scene <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scene<span style="color: #333333">((</span>Pane<span style="color: #333333">)</span> loader<span style="color: #333333">.</span><span style="color: #0000CC">load</span><span style="color: #333333">());</span>
+Stage app_stage <span style="color: #333333">=</span> <span style="color: #333333">(</span>Stage<span style="color: #333333">)</span> <span style="color: #333333">((</span>Node<span style="color: #333333">)</span> event<span style="color: #333333">.</span><span style="color: #0000CC">getSource</span><span style="color: #333333">()).</span><span style="color: #0000CC">getScene</span><span style="color: #333333">().</span><span style="color: #0000CC">getWindow</span><span style="color: #333333">();</span>
+app_stage<span style="color: #333333">.</span><span style="color: #0000CC">hide</span><span style="color: #333333">();</span>
+app_stage<span style="color: #333333">.</span><span style="color: #0000CC">setScene</span><span style="color: #333333">(</span>notes_scene<span style="color: #333333">);</span>
+FXMLNotesController controller <span style="color: #333333">=</span> loader<span style="color: #333333">.&lt;</span>FXMLNotesController<span style="color: #333333">&gt;</span>getController<span style="color: #333333">();</span>
+controller<span style="color: #333333">.</span><span style="color: #0000CC">setNotes</span><span style="color: #333333">(</span>notes<span style="color: #333333">);</span>
+app_stage<span style="color: #333333">.</span><span style="color: #0000CC">show</span><span style="color: #333333">();</span>
+
+Another button that we are concerned with here is the <span style="color: #FF0000; background-color: #FFAAAA">‘</span>Complete<span style="color: #FF0000; background-color: #FFAAAA">’</span> button<span style="color: #333333">.</span> In its action method<span style="color: #333333">,</span> we get the index of the ListView row to be deleted<span style="color: #333333">,</span> <span style="color: #997700; font-weight: bold">via:</span>
+Integer delete_index <span style="color: #333333">=</span> tasks_listview<span style="color: #333333">.</span><span style="color: #0000CC">getSelectionModel</span><span style="color: #333333">().</span><span style="color: #0000CC">getSelectedIndex</span><span style="color: #333333">();</span>
+<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(!</span>delete_index<span style="color: #333333">.</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+    deleteTask<span style="color: #333333">();</span>
+    refreshList<span style="color: #333333">();</span> <span style="color: #888888">//see tutorial #7 for an overview of this method</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">

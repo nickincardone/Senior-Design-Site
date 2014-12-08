@@ -41,8 +41,9 @@
     <br/>
     We now need to verify the data corresponding to the credentials entered by the user. To do this, write the following line of code:
     <br/>
-    ResultSet rs = statement.executeQuery(“SELECT * FROM Users WHERE USERNAME = “ + “‘“ + username_box.getText() + “‘“ + “ AND PASSWORD = “ + “‘“ +
-    password_box.getText() + “‘“);
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">ResultSet rs <span style="color: #333333">=</span> statement<span style="color: #333333">.</span><span style="color: #0000CC">executeQuery</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>SELECT <span style="color: #333333">*</span> FROM Users WHERE USERNAME <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> username_box<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">()</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> AND PASSWORD <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span> <span style="color: #333333">+</span> password_box<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">()</span> <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“‘“</span><span style="color: #333333">);</span>
+</pre></div>
+
 </p>
 <p dir="ltr">
     This will generate the record corresponding to the entered credentials, and will be stored in the object ‘rs’. Then, we can access the data in that object
@@ -51,42 +52,21 @@
     <br/>
 </p>
 <p dir="ltr">
-    boolean let_in = false;
-</p>
-<p dir="ltr">
-    while(rs.next()) {
-</p>
-<p dir="ltr">
-    if (rs.getString(“USERNAME”) != null &amp;&amp; rs.getString(“PASSWORD”) != null) {
-</p>
-<p dir="ltr">
-    String username = rs.getString(“USERNAME”):
-</p>
-<p dir="ltr">
-    System.out.println(“USERNAME = “ + username);
-    <br/>
-    String password = rs.getString(“PASSWORD”):
-</p>
-<p dir="ltr">
-    System.out.println(“PASSWORD = “ + password);
-</p>
-<p dir="ltr">
-    let_in = true;
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    rs.close();
-</p>
-<p dir="ltr">
-    statement.close();
-</p>
-<p dir="ltr">
-    c.close();
+   <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">boolean</span> let_in <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>rs<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>USERNAME<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">)</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span> <span style="color: #333333">&amp;&amp;</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>PASSWORD<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">)</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        String username <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>USERNAME<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">):</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>USERNAME <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> <span style="color: #333333">+</span> username<span style="color: #333333">);</span>
+        String password <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>PASSWORD<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">):</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>PASSWORD <span style="color: #333333">=</span> <span style="color: #FF0000; background-color: #FFAAAA">“</span> <span style="color: #333333">+</span> password<span style="color: #333333">);</span>
+        let_in <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+rs<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+statement<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+c<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">

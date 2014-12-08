@@ -5,7 +5,7 @@
 <br/>
 <p dir="ltr">
     <img
-        src="https://lh6.googleusercontent.com/HVaVKkIV-Fx4hiKCFbO4IZHGUNUq5ZBpTCC168BgE7IMR5k7bsKqgF4F9SqWJxPiAa94zce9sStO2E5RujzXAbmfdgmhMCtuGYLTCAcBgKB9G5eO_7D4d5CmlOtKURHOYw"
+        ng-src="dist/assets/images/tut7screenshot1.png"
         width="624px;"
         height="349px;"
         alt="tut7screenshot1.PNG"
@@ -26,33 +26,18 @@
     in the form:
 </p>
 <p dir="ltr">
-    void refreshList() {
-    <br/>
-    ResultSet rs = stat.executeQuery(“SELECT * FROM Tasks ORDER BY Timing DESC”); /*The ‘order by’ and ‘DESC’ here is determined by the corresponding entries
-    in the UI.*/
-</p>
-<p dir="ltr">
-    while (rs.next()) {
-</p>
-<p dir="ltr">
-    String title = rs.getString(“TITLE”);
-</p>
-<p dir="ltr">
-    String title = rs.getString(“LOCATION”);
-</p>
-<p dir="ltr">
-    String title = rs.getString(“TIMING”).toString();
-    <br/>
-    items.add(title + “\t” + location + “\t” + timing);
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    rs.close();
-</p>
-<p dir="ltr">
-    }
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">refreshList</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+ResultSet rs <span style="color: #333333">=</span> stat<span style="color: #333333">.</span><span style="color: #0000CC">executeQuery</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>SELECT <span style="color: #333333">*</span> FROM Tasks ORDER BY Timing DESC<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span> <span style="color: #888888">/*The ‘order by’ and ‘DESC’ here is determined by the corresponding entries in the UI.*/</span>
+<span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>rs<span style="color: #333333">.</span><span style="color: #0000CC">next</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+String title <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>TITLE<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+String title <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>LOCATION<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+String title <span style="color: #333333">=</span> rs<span style="color: #333333">.</span><span style="color: #0000CC">getString</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>TIMING<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">).</span><span style="color: #0000CC">toString</span><span style="color: #333333">();</span>
+    items<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>title <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“\</span>t<span style="color: #FF0000; background-color: #FFAAAA">”</span> <span style="color: #333333">+</span> location <span style="color: #333333">+</span> <span style="color: #FF0000; background-color: #FFAAAA">“\</span>t<span style="color: #FF0000; background-color: #FFAAAA">”</span> <span style="color: #333333">+</span> timing<span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+rs<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <br/>
 <p dir="ltr">

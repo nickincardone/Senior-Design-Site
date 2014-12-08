@@ -5,64 +5,28 @@
 </p>
 <br/>
 <p dir="ltr">
-    Stage dialogStage = new Stage();
-</p>
-<p dir="ltr">
-    Button okButton = new Button(“Ok”);
-</p>
-<p dir="ltr">
-    dialogStage.initModality(Modality.WINDOW_MODAL);
-</p>
-<p dir="ltr">
-    dialogStage.setScene(new Scene(VBoxBuilder.create().children(new Text(“Hi”), okButton).alignment(Pos.CENTER).padding(new Insets(5)).build()));
-</p>
-<p dir="ltr">
-    dialogStage.show();
-</p>
-<p dir="ltr">
-    okButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
-</p>
-<p dir="ltr">
-    @Override
-</p>
-<p dir="ltr">
-    public void handle(ActionEvent event) {
-</p>
-<p dir="ltr">
-    try {
-</p>
-<p dir="ltr">
-    Parent date_page_parent = FXMLLoader.load(getClass().getResource(“FXMLHomePage.fxml”));
-</p>
-<p dir="ltr">
-    Scene date_page_scene = new Scene(date_page_parent);
-</p>
-<p dir="ltr">
-    Stage app_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-</p>
-<p dir="ltr">
-    app_stage.hide();
-</p>
-<p dir="ltr">
-    app_stage.setScene(date_page_scene);
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    catch(IOException e) {
-</p>
-<p dir="ltr">
-    System.out.println(e.getMessage());
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    }
-</p>
-<p dir="ltr">
-    }
+   <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">Stage dialogStage <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Stage<span style="color: #333333">();</span>
+Button okButton <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Button<span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>Ok<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">);</span>
+dialogStage<span style="color: #333333">.</span><span style="color: #0000CC">initModality</span><span style="color: #333333">(</span>Modality<span style="color: #333333">.</span><span style="color: #0000CC">WINDOW_MODAL</span><span style="color: #333333">);</span>
+dialogStage<span style="color: #333333">.</span><span style="color: #0000CC">setScene</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Scene<span style="color: #333333">(</span>VBoxBuilder<span style="color: #333333">.</span><span style="color: #0000CC">create</span><span style="color: #333333">().</span><span style="color: #0000CC">children</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Text<span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>Hi<span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">),</span> okButton<span style="color: #333333">).</span><span style="color: #0000CC">alignment</span><span style="color: #333333">(</span>Pos<span style="color: #333333">.</span><span style="color: #0000CC">CENTER</span><span style="color: #333333">).</span><span style="color: #0000CC">padding</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Insets<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">)).</span><span style="color: #0000CC">build</span><span style="color: #333333">()));</span>
+dialogStage<span style="color: #333333">.</span><span style="color: #0000CC">show</span><span style="color: #333333">();</span>
+okButton<span style="color: #333333">.</span><span style="color: #0000CC">setOnAction</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> EventHandler<span style="color: #333333">&lt;</span>ActionEvent<span style="color: #333333">&gt;()</span> <span style="color: #333333">{</span>
+    <span style="color: #555555; font-weight: bold">@Override</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">handle</span><span style="color: #333333">(</span>ActionEvent event<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">try</span> <span style="color: #333333">{</span>
+            Parent date_page_parent <span style="color: #333333">=</span> FXMLLoader<span style="color: #333333">.</span><span style="color: #0000CC">load</span><span style="color: #333333">(</span>getClass<span style="color: #333333">().</span><span style="color: #0000CC">getResource</span><span style="color: #333333">(</span><span style="color: #FF0000; background-color: #FFAAAA">“</span>FXMLHomePage<span style="color: #333333">.</span><span style="color: #0000CC">fxml</span><span style="color: #FF0000; background-color: #FFAAAA">”</span><span style="color: #333333">));</span>
+            Scene date_page_scene <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scene<span style="color: #333333">(</span>date_page_parent<span style="color: #333333">);</span>
+            Stage app_stage <span style="color: #333333">=</span> <span style="color: #333333">(</span>Stage<span style="color: #333333">)((</span>Node<span style="color: #333333">)</span> event<span style="color: #333333">.</span><span style="color: #0000CC">getSource</span><span style="color: #333333">()).</span><span style="color: #0000CC">getScene</span><span style="color: #333333">().</span><span style="color: #0000CC">getWindow</span><span style="color: #333333">();</span>
+            app_stage<span style="color: #333333">.</span><span style="color: #0000CC">hide</span><span style="color: #333333">();</span>
+            app_stage<span style="color: #333333">.</span><span style="color: #0000CC">setScene</span><span style="color: #333333">(</span>date_page_scene<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">catch</span><span style="color: #333333">(</span>IOException e<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>e<span style="color: #333333">.</span><span style="color: #0000CC">getMessage</span><span style="color: #333333">());</span>
+<span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 </p>
 <br/>
 <p>
