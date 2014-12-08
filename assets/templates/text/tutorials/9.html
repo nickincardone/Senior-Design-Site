@@ -1,0 +1,104 @@
+<p dir="ltr">
+    The objective of this tutorial is to introduce dialog boxes into the app. JavaFX currently does not have an easy way to use dialog boxes, so a good way to
+    use them would be to look up GIT repositories for Java FX dialog boxes online. Workarounds are also possible, and although they aren’t necessarily the
+    prettiest way of implementing them, the following code would work:
+</p>
+<br/>
+<p dir="ltr">
+    Stage dialogStage = new Stage();
+</p>
+<p dir="ltr">
+    Button okButton = new Button(“Ok”);
+</p>
+<p dir="ltr">
+    dialogStage.initModality(Modality.WINDOW_MODAL);
+</p>
+<p dir="ltr">
+    dialogStage.setScene(new Scene(VBoxBuilder.create().children(new Text(“Hi”), okButton).alignment(Pos.CENTER).padding(new Insets(5)).build()));
+</p>
+<p dir="ltr">
+    dialogStage.show();
+</p>
+<p dir="ltr">
+    okButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+</p>
+<p dir="ltr">
+    @Override
+</p>
+<p dir="ltr">
+    public void handle(ActionEvent event) {
+</p>
+<p dir="ltr">
+    try {
+</p>
+<p dir="ltr">
+    Parent date_page_parent = FXMLLoader.load(getClass().getResource(“FXMLHomePage.fxml”));
+</p>
+<p dir="ltr">
+    Scene date_page_scene = new Scene(date_page_parent);
+</p>
+<p dir="ltr">
+    Stage app_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+</p>
+<p dir="ltr">
+    app_stage.hide();
+</p>
+<p dir="ltr">
+    app_stage.setScene(date_page_scene);
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    catch(IOException e) {
+</p>
+<p dir="ltr">
+    System.out.println(e.getMessage());
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<p>
+    Note that there are several imports necessary to accommodate this, and the Insets class has to be obtained from javafx.geometry.Insets. One would be best
+    advised to look up the Javadocs for each of the lines of code to understand their meaning. The code pattern after the dialog box is created is quite
+    similar to that of a regular button, with a simple handler method to deal with the press of the button in the dialog box.
+</p>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

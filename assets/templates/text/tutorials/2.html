@@ -1,0 +1,77 @@
+<p dir="ltr">
+    This section contains information on how to navigate between pages, which will be important in establishing a login. Now, right-click on the package name
+    in NetBeans, i.e., todoapp, and click on Java -&gt; New Empty FXML and call it FXMLHomePage. Then, hit next, check the box ‘Use Java Controller’, and hit
+    next. We will not be using CSS for now, so hit finish. Then, right-click on FXMLDocument.fxml, and click on Open. This will open up a new SceneBuilder
+    window. By default, there will already be a button on the screen. We will add a TextField using a simple drag and drop from the left panel under Controls.
+    You could also add a label or two on top, looking like this:
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/viSz9he5sk8ORzQwoLrzHNHATDuf4ZTYKt1_8PYlqBAY3nsz7kECbJ5QVJOPOIkohsQePVMXnOvfVSJdd5ix_Wl0mBA0eT3d6BJ-EbNwV81Ad5BwDzNyOt8MKIuCyXGBvw"
+        width="624px;"
+        height="348px;"
+        alt="tut2screenshot1.PNG"
+    />
+</p>
+<br/>
+<p dir="ltr">
+    Note that the red label at the bottom is only to be displayed if the user enters the incorrect password. Then, we can create the home page, by opening
+    FXMLHomePage.fxml in SceneBuilder. The home page can have a simple layout for now, including just one label displaying the words ‘Home Page’.
+</p>
+<br/>
+<p dir="ltr">
+    Now, in the file FXMLDocumentController.java, go to the automatically generated method handleButtonAction, which will correspond to the login button.
+    Delete the contents of that method. We will now begin to establish the page navigation. To begin, add a new line ‘Parent home_page_parent =
+    FXMLLoader.load(getClass().getResource(“FXMLHomePage.fxml”);’. You will need to right click on Parent and click on Fix Imports to make this line work. Do
+    this whenever a class you’re using produces an error. Note that there is file I/O involved here, so we will need to append ‘throws IOException’ after void
+    handleButtonAction(ActionEvent event). Then, add the line Scene home_page_scene = new Scene(home_page_parent);. This corresponds to SceneBuilder. Then, add
+    the lines Stage app_stage = (Stage)((Node) event.getSource().getScene().getWindow());. A stage is the place where everything takes place. To check what
+    each method in that line does, just right click on it and view the Javadoc. Then, change the stage to the home page. This is done by using the setScene()
+    method. In the end, the handleButtonAction() method will look something like this:
+    <br/>
+    <br/>
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh5.googleusercontent.com/Yy07ippabn5cZKMd8ciB8__DXj_fmypsGebIxcdSWh05XimeWFP47_HESniGL7yRttyueIWFMJdiaPBXzRmWfmOC930rx85nzhpFqwgUZVFVgWEJZOCWP0F-gjV6Dm3QtQ"
+        width="665px;"
+        height="354px;"
+        alt="tut2screenshot2.PNG"
+    />
+</p>
+<br/>
+<p>
+    Then, hit the play button and hit the button once the page shows up. It will navigate to the home page screen.
+</p>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

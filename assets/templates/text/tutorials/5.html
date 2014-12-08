@@ -1,0 +1,142 @@
+<p dir="ltr">
+    This tutorial is a follow-up to one of the earlier tutorials in which we learned how to use SQL in JavaFX. The first step here would be to create a simple
+    SQL file in Notepad with a CREATE TABLE statement, that creates the table ‘Tasks’. This table could contain fields like Title, Location, Notes, Time, etc.
+    Also, create a SQL file with INSERT statement(s), inserting data into this table.
+</p>
+<br/>
+<p dir="ltr">
+    Then, open Netbeans, right click on the package ‘todoapp’, New-&gt;Empty FXML-&gt;Name. If you want, you can add a CSS file along the way. Edit this FXML
+    page as you want, using SceneBuilder. A suitable layout would look like the following:
+    <br/>
+    <br/>
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/Tnp8Ldw0rE4NiS1UUO_dHEaI_vpnzQe5wFJ6GnKQZpAJxOZvWEhxvN_DnHPfmTQ9tqIz_b5SoPRYuncgzHKS9hU2DgbYcL5GKfbcq9A8sy77beTx_mYA86Bnoh--TG-W4A"
+        width="624px;"
+        height="367px;"
+        alt="tut6screenshot1.PNG"
+    />
+</p>
+<p dir="ltr">
+    Here, the dropdownlists were created using MenuButtons. The Date field is a DatePicker, which allows the user to conveniently select the date required. The
+    three drop-down lists will display the hour, minute, and AM/PM depending on their selection. To facilitate this, the action methods of each of these
+    buttons have to be edited. For example,
+</p>
+<p dir="ltr">
+    private void hourMenuItemButtonAction(ActionEvent event) throws IOException {
+</p>
+<p dir="ltr">
+    MenuItem menu = (MenuItem) event.getSource();
+    <br/>
+    hour_menubutton.setText(menu.getText());
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    Here, ‘hour_menubutton’ is the MenuButton corresponding to the hour. When it is selected, the text of the menu button is edited to reflect the change. The
+    code for the minute and AM/PM fields is similar.
+</p>
+<br/>
+<p dir="ltr">
+    The last thing to deal with here is the ‘Done’ button. This is the part of the UI that involves interaction with the database, SQLite. The first thing to
+    do is to grab the value of the hour selected with the MenuButton. If the database table you are creating stores 24-hour dates, you will have to modify the
+    date inserted as necessary, by finding out if it is AM or PM and converting accordingly. Once the data to be inserted is collected, a query string can be
+    formed, similar to the following:
+    <br/>
+    String query = “INSERT INTO Tasks (TITLE,LOCATION,NOTES,TIMING) VALUES (“ + “‘“ + title_text.getText() + “‘,” + “‘“ + location_text.getText() + “‘.” + “‘“
+    + notes_text.getText() + “‘,” + “‘“ + minute_menubutton.getText() + “:00” + “‘);”;
+</p>
+<p dir="ltr">
+    Here, the table field ‘Timing’ will contain the string concatenation of the hour and minute values, with the hour modified in the previous step, as needed.
+    Then, use the following code to perform the insert operation into the table:
+</p>
+<p dir="ltr">
+    public void insertStatement() {
+</p>
+<p dir="ltr">
+    Connection c = null;
+    <br/>
+    Statement stat = null;
+</p>
+<p dir="ltr">
+    try {
+</p>
+<p dir="ltr">
+    Class.forName(“org.sqlite.JDBC”);
+</p>
+<p dir="ltr">
+    c = DriverManager.getConnection(“jdbc:sqlite:first.db”);
+</p>
+<p dir="ltr">
+    c.setAutoCommit(false);
+</p>
+<p dir="ltr">
+    stat = c.createStatement();
+</p>
+<p dir="ltr">
+    stat.executeUpdate(query);
+</p>
+<p dir="ltr">
+    stat.close();
+</p>
+<p dir="ltr">
+    c.commit();
+</p>
+<p dir="ltr">
+    c.close();
+</p>
+<p dir="ltr">
+    } catch (Exception e) {
+    <br/>
+    System.err.println(“Error”);
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<p dir="ltr">
+    The key feature here that was not introduced in the earlier tutorial is the ‘executeUpdate()’ function call. This method is used for insertions, updates,
+    and deletes to/from a particular table. Then, run the JavaFX page (which would have a suitable button for insertion). Now, in order to verify that the data
+    has been inserted suitably, navigate to the location of the .sql files, and open the command-line utility, sqlite, by typing in sqlite3 as explained in
+    tutorial #2. Then, write a simple SELECT statement as you wish in order to view the contents of the table.
+</p>
+<div>
+    <br/>
+</div>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

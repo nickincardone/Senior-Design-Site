@@ -1,0 +1,130 @@
+<p dir="ltr">
+    Following up on the previous tutorial, where we talked about the buttons at the bottom of the page (Notes, Complete, and Edit), we will demonstrate here
+    how to incorporate them. The first step is to create a new JavaFX document in the todoapp package. The layout is very simple:
+</p>
+<p dir="ltr">
+    <img
+        src="https://lh4.googleusercontent.com/3jzuKK8NZzwS0zPHix_HFWAnIhCjsTT7vqS45LjRKNaqH8pB2OeqBL5T5KIx1I9d33CPisVmuEmhtDIIxliZqzFnUgZiHYtIlBCjd_8oIx23WJlLp0vxV96B2WtetZ8y2Q"
+        width="624px;"
+        height="360px;"
+        alt="tut8screenshot1.PNG"
+    />
+    The back button will take us back to the viewing page (shown in tutorial #7). As a reminder, the text field in this page will display the notes
+    corresponding to the selected item in the list view on the other page (Notes is a field in the database table ‘Tasks’). The selected item can be obtained
+    from the ListView as follows:
+</p>
+<p dir="ltr">
+    String selected_item = tasks_listview.getSelectionModel().getSelectedItem().toString();
+</p>
+<br/>
+<p dir="ltr">
+    The next step is to obtain the ListView values corresponding to the selected item, and create a SELECT query out of it. This is done by suitably parsing
+    the string ‘selected_item’ obtained above. The following snippet is one way of performing this task:
+    <br/>
+    String queryString = “SELECT NOTES FROM TASKS WHERE TIMING = “ + “‘“ + selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length())
+    + “‘“ + “;”;
+</p>
+<p dir="ltr">
+    ResultSet rs = stat.executeQuery(queryString);
+</p>
+<p dir="ltr">
+    while (rs.next()) {
+</p>
+<p dir="ltr">
+    notes = rs.getString(“NOTES”); //Assigning the appropriate notes to the ‘notes’ variable
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    rs.close();
+</p>
+<br/>
+<p dir="ltr">
+    Once we have done the above, we have to make sure these changes are reflected in the Notes JavaFX file too (the FXML document created at the start of this
+    tutorial). By doing this, we can ensure that once the Notes button is clicked on the first page, the notes are loaded onto the new scene before the scene
+    is even shown. The passing of values between two different scenes can be done as follows:
+    <br/>
+    <br/>
+    FXMLLoader loader = new FXMLLoader(getClass().getResource(“FXMLNotes.fxml”);
+</p>
+<p dir="ltr">
+    Scene notes_scene = new Scene((Pane) loader.load());
+</p>
+<p dir="ltr">
+    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+</p>
+<p dir="ltr">
+    app_stage.hide();
+</p>
+<p dir="ltr">
+    app_stage.setScene(notes_scene);
+</p>
+<p dir="ltr">
+    FXMLNotesController controller = loader.&lt;FXMLNotesController&gt;getController();
+</p>
+<p dir="ltr">
+    controller.setNotes(notes);
+</p>
+<p dir="ltr">
+    app_stage.show();
+</p>
+<br/>
+<p dir="ltr">
+    Another button that we are concerned with here is the ‘Complete’ button. In its action method, we get the index of the ListView row to be deleted, via:
+    <br/>
+    Integer delete_index = tasks_listview.getSelectionModel().getSelectedIndex();
+</p>
+<p dir="ltr">
+    if (!delete_index.equals(null)) {
+</p>
+<p dir="ltr">
+    deleteTask();
+</p>
+<p dir="ltr">
+    refreshList(); //see tutorial #7 for an overview of this method
+</p>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<p dir="ltr">
+    deleteTask() shown above is a simple method that deletes a particular item from the table in the database. For example, “DELETE from Tasks WHERE TIMING = “
+    + “‘“ + selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length()) + “‘“ + “;”; The rest of the deleteTask() method is very
+    similar to the insertStatement() method in tutorial #6.
+</p>
+<p>
+    The refreshList() method is then called, which makes sure that the entries in the UI are ordered and updated as per the entries in the database.
+</p>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

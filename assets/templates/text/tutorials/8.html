@@ -1,0 +1,179 @@
+<p dir="ltr">
+    In this tutorial, we will learn how to edit the entries in the database, by specifying edits in the JavaFX UI. This corresponds to the ‘Edit’ button
+    introduced in the figure in tutorial #7. Note that in terms of UI, the editing is exactly the same as insertion. Therefore, we will use the same UI that
+    was used in tutorial #6 for the edit page. The first thing to take care of here is the Edit button action. Here, we will first create strings corresponding
+    to the various fields of the ListView entry to be edited. The code for this is as follows (note the similarity to tutorial #8):
+</p>
+<p dir="ltr">
+    Connection c = null;
+</p>
+<p dir="ltr">
+    Statement stat = null;
+</p>
+<p dir="ltr">
+    try {
+</p>
+<p dir="ltr">
+    Class.forName(“org.sqlite.JDBC”);
+</p>
+<p dir="ltr">
+    c = DriverManager.getConnection(“jdbc:sqlite:first.db”);
+</p>
+<p dir="ltr">
+    c.setAutoCommit(false);
+</p>
+<p dir="ltr">
+    stat = c.createStatement();
+</p>
+<p dir="ltr">
+    String selected_item = tasks_listview.getSelectionModel().getSelectedItem().toString();
+</p>
+<p dir="ltr">
+    String queryString = “SELECT * FROM TASKS WHERE TIMING + “+ “‘“ + selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length()) +
+    “‘“ + “;”;
+</p>
+<p dir="ltr">
+    ResultSet rs = stat.executeQuery(queryString);
+</p>
+<p dir="ltr">
+    String time_text = selected_item.substring(selected_item.lastIndexOf(“\t”) + 1, selected_item.length();
+</p>
+<p dir="ltr">
+    //The following five variables are subject to the exact formatting of the date string that the database requires.
+</p>
+<p dir="ltr">
+    String time_text_year = time_text.substring(0,4);
+</p>
+<p dir="ltr">
+    String time_text_month = time_text.substring(5,7);
+</p>
+<p dir="ltr">
+    String time_text_day = time_text.substring(8,10);
+</p>
+<p dir="ltr">
+    String time_text_hour = time_text.substring(11,13);
+</p>
+<p dir="ltr">
+    String time_text_minute = time_text.substring(14,14);
+</p>
+<p dir="ltr">
+    while (rs.next()) {
+</p>
+<p dir="ltr">
+    //These are the other fields of the Tasks table.
+</p>
+<p dir="ltr">
+    title_text = rs.getSTring(“TITLE”);
+</p>
+<p dir="ltr">
+    location_text = rs.getString(“LOCATION”);
+</p>
+<p dir="ltr">
+    notes_text = rs.getString(“NOTES”);
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    rs.close();
+</p>
+<p dir="ltr">
+    } catch (Exception ex) {
+</p>
+<p dir="ltr">
+    System.err.println(“Error”);
+</p>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<p dir="ltr">
+    Now, we fill up the values of the insert page using the data we have just obtained. This will ensure, as in the previous tutorial, that the current data
+    will already be entered when the user clicks on the edit button.
+</p>
+<br/>
+<p dir="ltr">
+    FXMLLoader loader = new FXMLLoader(getClass().getResource(“FXMLDriverPage.fxml”));
+</p>
+<p dir="ltr">
+    Scene notes_scene = new Scene((Pane) loader.load());
+</p>
+<p dir="ltr">
+    Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+</p>
+<p dir="ltr">
+    app_stage.setScene(notes_scene);
+</p>
+<p dir="ltr">
+    FXMLInsertPageController controller = loader.&lt;FXMLInsertPageController&gt;getController();
+</p>
+<p dir="ltr">
+    /*The following methods have already been defined in the insert page controller, and their basic function is to set the values of the UI elements to those
+    specified in the variable passed in. */
+</p>
+<p dir="ltr">
+    controller.setNotes(notes_text);
+</p>
+<p dir="ltr">
+    controller.setTitle(title_text);
+</p>
+<p dir="ltr">
+    controller.setLocation(location_text);
+</p>
+<p dir="ltr">
+    controller.setdatePicker(time_text_year, time_text_month, time_text_day);
+</p>
+<p dir="ltr">
+    //The hour can be modified, if needed, to accommodate the 24-hour clock.
+</p>
+<p dir="ltr">
+    controller.setHourMenuButton(time_text_hour);
+</p>
+<p dir="ltr">
+    controller.setMinuteMenuButton(time_text_minute);
+</p>
+<p dir="ltr">
+    deleteTask();
+</p>
+<p dir="ltr">
+    app_stage.show();
+</p>
+<br/>
+<p>
+    The penultimate line is the function call deleteTask(), which was introduced in tutorial #8. The reason we’re doing this is because the page InsertPage
+    already has the functionality to insert, and therefore, in order to put the existing code to use, we just delete the task corresponding to the entry
+    selected, and then ‘re-insert’ the data obtained above. An alternative to this approach (and possibly a more efficient one) would be to simply use the
+    UPDATE SQL statement, which does the editing for us.
+</p>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

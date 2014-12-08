@@ -1,0 +1,101 @@
+<p dir="ltr">
+    In this tutorial, we will see how we can view the contents of the database in the app itself. Up until now, we have relied on the command-line utility to
+    do this. First, open the NetBeans project ToDoList created in tutorial 1, and create a new JavaFX document with the following layout:
+</p>
+<br/>
+<p dir="ltr">
+    <img
+        src="https://lh6.googleusercontent.com/HVaVKkIV-Fx4hiKCFbO4IZHGUNUq5ZBpTCC168BgE7IMR5k7bsKqgF4F9SqWJxPiAa94zce9sStO2E5RujzXAbmfdgmhMCtuGYLTCAcBgKB9G5eO_7D4d5CmlOtKURHOYw"
+        width="624px;"
+        height="349px;"
+        alt="tut7screenshot1.PNG"
+    />
+</p>
+<p dir="ltr">
+    Here, the big box on the right hand side is a ListView, which will display each row of the database table, as queried, on each row of the ListView.
+</p>
+<br/>
+<p dir="ltr">
+    The first thing we will do here is create a new list of items (to hold the database contents) as follows:
+    <br/>
+    ObservableList items = FXCollections.observableArrayList();
+</p>
+<p dir="ltr">
+    Then, we will obtain the tasks (Task table entries) from the database table. To do this, as explained in earlier tutorials, establish a connection, create
+    a statement variable that is assigned to this connection, and create a result set that will contain the results of the SELECT query specified. This will be
+    in the form:
+</p>
+<p dir="ltr">
+    void refreshList() {
+    <br/>
+    ResultSet rs = stat.executeQuery(“SELECT * FROM Tasks ORDER BY Timing DESC”); /*The ‘order by’ and ‘DESC’ here is determined by the corresponding entries
+    in the UI.*/
+</p>
+<p dir="ltr">
+    while (rs.next()) {
+</p>
+<p dir="ltr">
+    String title = rs.getString(“TITLE”);
+</p>
+<p dir="ltr">
+    String title = rs.getString(“LOCATION”);
+</p>
+<p dir="ltr">
+    String title = rs.getString(“TIMING”).toString();
+    <br/>
+    items.add(title + “\t” + location + “\t” + timing);
+</p>
+<p dir="ltr">
+    }
+</p>
+<p dir="ltr">
+    rs.close();
+</p>
+<p dir="ltr">
+    }
+</p>
+<br/>
+<p dir="ltr">
+    The line containing ‘items.add()’ populates that list with the contents of the database in the order specified by the query. Then, set the items in the
+    ListView to be equal to this list, i.e.,
+</p>
+<p dir="ltr">
+    tasks_listview.setItems(items);
+</p>
+<br/>
+<p>
+    Note that we are updating the values of the MenuButton as in the previous tutorial, and refreshing the list by executing the above code every time, so as
+    to ensure the change in the MenuButton is reflected in the ListView.
+</p>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>

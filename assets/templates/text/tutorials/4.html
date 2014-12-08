@@ -1,0 +1,57 @@
+<p dir="ltr">
+    In this tutorial, we will learn how to use Cascading Stylesheets (CSS) in conjunction with JavaFX.
+</p>
+<br/>
+<p dir="ltr">
+    The first step here would be to open Netbeans, go to the ‘Source Packages’ directory, and right click on the default package that you find there. Then,
+    select ‘Other’, and filter for ‘Cascading Style Sheet’. Then, name the file and create it.
+</p>
+<br/>
+<p dir="ltr">
+    In order to apply the CSS code to the JavaFX project in question, the following code can be used in the start() method of the main Java file
+    (ToDoApp.java):
+    <br/>
+    String css = ToDoApp.getResource(“UglyStyle.css”).toExternalForm();
+    <br/>
+    scene.getStyleSheets().add(css); //Adding CSS to JavaFX.
+</p>
+<br/>
+<p dir="ltr">
+    By using these simple steps, it is possible to write a short amount of CSS code that serves as a standard to style all the buttons and labels, and you can
+    easily apply that CSS code to JavaFX using the Java code above.
+</p>
+<div>
+    <br/>
+</div>
+<style>
+    body {
+
+    }
+    ul {
+        font-size: 24px;
+        padding-right: 10px;
+    }
+
+    p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .divStyle {
+        background-color: #F0F0F0;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .note {
+        padding-left: 15px;
+    }
+
+    .header {
+        background-color: #CCCCCC;
+        padding-left: 5px;
+    }
+</style>
