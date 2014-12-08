@@ -26,7 +26,7 @@
         'title': 'JavaFX Tutorial 2',
         'src': '//www.youtube.com/embed/Co0Kw5IBSvQ',
         'subheading': 'Setting Up Our Database',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager/tree/bc003a502d02c0cc6f6ca18220b7a17d8f0fd07e'
       },
       {
         'title': 'JavaFX Tutorial 3',
@@ -38,13 +38,13 @@
         'title': 'JavaFX Tutorial 4',
         'src': '//www.youtube.com/embed/SCyZdWZi7C0',
         'subheading': 'Login Page Using SQLite Database',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager/tree/23c3b32ea0827b7bc4ff6bfe34b750e3614f6c93'
       },
       {
         'title': 'JavaFX Tutorial 5',
         'src': '//www.youtube.com/embed/cqZRe9iKzo8',
         'subheading': 'CSS with JavaFX',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager/tree/27b3afc57e817093aa6bf115c659b6d2cdb8273b'
       },
       {
         'title': 'JavaFX Tutorial 6',
@@ -56,7 +56,7 @@
         'title': 'JavaFX Tutorial 7',
         'src': '//www.youtube.com/embed/eq5Sup5vFL4',
         'subheading': 'Insert Features for our App',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager/tree/afb1bfb6c2b5ca50755ac103cb66abdc55e93065'
       },
       {
         'title': 'JavaFX Tutorial 8',
@@ -68,13 +68,13 @@
         'title': 'JavaFX Tutorial 9',
         'src': '//www.youtube.com/embed/0yF3FYQ6P-c',
         'subheading': 'Edit Features',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager/tree/c0c843a1c477c8e212348dbca22141eda59f231d'
       },
       {
         'title': 'JavaFX Tutorial 10',
         'src': '//www.youtube.com/embed/arCkmFn0fo0',
         'subheading': 'Dialog Boxes and Wrap-Up',
-        'description': ''
+        'description': 'https://github.com/nickincardone/Senior-Design-Task-Manager'
       }  /**,
       {
         'title': 'JavaFX Tutorial 11',
